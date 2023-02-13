@@ -17,7 +17,4 @@ use App\Http\Controllers\EstudianteController;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/egresados',[EgresadoController::class, 'index'])->name('egresado.index');
 
-Route::get('/egresados/{id}', [EgresadoController::class, 'show'])
-->name('egresado.mostrar')->where('id', '[0-9]+');
