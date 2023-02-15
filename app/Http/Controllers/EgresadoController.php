@@ -2,15 +2,9 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
 use Illuminate\Http\Request;
 use App\Models\Egresado;
 
-=======
-use App\Models\Egresado;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
->>>>>>> bc05de234ba7670ef561400e3cc7cff305b1e2ab
 
 class EgresadoController extends Controller
 {
@@ -19,11 +13,6 @@ class EgresadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-<<<<<<< HEAD
-    public function index()
-    {
-        //
-=======
     public function index(Request $request)
     {
         $texto=trim($request->get('texto'));
@@ -33,7 +22,6 @@ class EgresadoController extends Controller
         ->orwhere('identidad' ,'LIKE','%'.$texto.'%')
         ->paginate(5);
         return view ('egresado/index',compact('egresados', 'texto'));
->>>>>>> bc05de234ba7670ef561400e3cc7cff305b1e2ab
     }
 
     /**
@@ -76,12 +64,7 @@ class EgresadoController extends Controller
      */
     public function edit($id)
     {
-<<<<<<< HEAD
-        $egresado = Egresado::findOrfail($id);
-        return view('egresado.edit')->with('egresado', $egresado);
-=======
         //
->>>>>>> bc05de234ba7670ef561400e3cc7cff305b1e2ab
     }
 
     /**
@@ -93,7 +76,6 @@ class EgresadoController extends Controller
      */
     public function update(Request $request, $id)
     {
-<<<<<<< HEAD
         $request->validate([
         
             'identidad'=>'required',
@@ -118,9 +100,6 @@ class EgresadoController extends Controller
         }else{
             //retornar con un mensaje de error.
         }
-=======
-        //
->>>>>>> bc05de234ba7670ef561400e3cc7cff305b1e2ab
     }
 
     /**
@@ -131,12 +110,8 @@ class EgresadoController extends Controller
      */
     public function destroy($id)
     {
-<<<<<<< HEAD
-        
-=======
         $egresado = Egresado::find($id);
         $egresado->delete();
         return redirect('/egresados')->with('mensaje', 'Egresado fue borrado completamente');
->>>>>>> bc05de234ba7670ef561400e3cc7cff305b1e2ab
     }
 }
