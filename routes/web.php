@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EstudianteController;
+use App\Http\Controllers\EgresadoController;
+use App\Http\Controllers\Controller;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +19,10 @@ use App\Http\Controllers\EstudianteController;
 Route::get('/', function () {
     return view('welcome');
 });
+ 
+
+Route::resource('/egresados', 'App\Http\Controllers\EgresadoController');
+
+Route::put('/egresados/{id}/editar', [EgresadoController::class, 'update'])
+->name('egresado.update')->where('id','[0-9]+');
 
