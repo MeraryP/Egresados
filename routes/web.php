@@ -26,3 +26,6 @@ Route::resource('/egresados', 'App\Http\Controllers\EgresadoController');
 Route::put('/egresados/{id}/editar', [EgresadoController::class, 'update'])
 ->name('egresado.update')->where('id','[0-9]+');
 
+Route::resource('/egresados', 'App\Http\Controllers\EgresadoController');
+
+
