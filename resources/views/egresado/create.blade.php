@@ -41,7 +41,7 @@
         <select id="combo2" class="custom-select" name="carrera" id="carrera">  
         <option>Bachillerato en Ciencias y Letras</option>
         <option>Bachillerato en Ciencias y Humanidades</option>
-        <option>Perito Mercantil y Contador Público</option>
+       
         </select>
       </div>
       <div class="mb-3">
