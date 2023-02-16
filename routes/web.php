@@ -18,13 +18,7 @@ use App\Http\Controllers\Controller;
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< Updated upstream
- 
-
-
-=======
 
 Route::resource('/egresados', 'App\Http\Controllers\EgresadoController');
->>>>>>> Stashed changes
 
 
