@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\Controller;
 
 
@@ -22,3 +23,7 @@ Route::get('/', function () {
 Route::resource('/egresados', 'App\Http\Controllers\EgresadoController');
 
 
+Route::resource('carreras', 'App\Http\Controllers\CarreraController');
+
+Route::put('/carreras/{id}/editar', [CarreraController::class, 'update'])
+->name('carrera.update')->where('id','[0-9]+');
