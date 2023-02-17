@@ -25,7 +25,7 @@ class EgresadoController extends Controller
      */
     public function create()
     {
-        return view ('egresado.create');
+        
     }
 
     /**
@@ -37,32 +37,6 @@ class EgresadoController extends Controller
     public function store(Request $request)
     {
         
-        $request->validate([
-           
-            'identidad'=>'required|unique:egresados,identidad',
-            'nombre'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-            'fecha'=>'required|date',
-            'egreso'=>'required|numeric',
-           
-        ]);
-     
-        $egresados = new Egresado();
-        $egresados->identidad = $request->get('identidad');
-        $egresados->nombre = $request->get('nombre');
-        $egresados->fecha_nacimiento = $request->get('fecha');
-        $egresados->genero = $request->get('genero');
-        $egresados->carreras = $request->get('carrera');
-        $egresados->año_egresado = $request->get('egreso');
-
-
-        $egresados->save();
-
-        if($egresados){
-            return redirect('/egresados')->with('mensaje', 'El egresado fue creado exitosamente.');
-        }else{
-            //retornar con un mensaje de error.
-        }
-
     }
 
     /**
@@ -84,9 +58,7 @@ class EgresadoController extends Controller
      */
     public function edit($id)
     {
-        $egresado = Egresado::findOrfail($id);
-        return view('egresado.edit')->with('egresado', $egresado);
-    
+        
     }
 
     /**
@@ -97,33 +69,8 @@ class EgresadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-
     {
 
-        $request->validate([
-        
-            'identidad'=>'required',
-            'nombre'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
-            'fecha'=>'required|date',
-            'egreso'=>'required|numeric',
-        ]);
-
-        $egresado = Egresado::find($id);
-        $egresado->identidad = $request->get('identidad');
-        $egresado->nombre = $request->get('nombre');
-        $egresado->fecha_nacimiento = $request->get('fecha');
-        $egresado->genero = $request->get('genero');
-        $egresado->carreras = $request->get('carrera');
-        $egresado->año_egresado = $request->get('egreso');
-
-
-        $egresado->save();
-
-        if($egresado){
-            return redirect('/egresados')->with('mensaje', 'El egresado fue modificado exitosamente.');
-        }else{
-            //retornar con un mensaje de error.
-        }
     }
 
     /**
