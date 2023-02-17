@@ -10,7 +10,13 @@ class EgresadoController extends Controller
 {
     public function index(Request $request)
     {
-       
+        $texto=trim($request->get('texto'));
+        $egresados =DB::table('egresados')
+        ->select('id','identidad','nombre','fecha_nacimiento','genero','carreras','año_egresado')
+        ->where('nombre' ,'LIKE','%'.$texto.'%')
+        ->orwhere('identidad' ,'LIKE','%'.$texto.'%')
+        ->paginate(5);
+        return view ('egresado/index',compact('egresados', 'texto'));
     }
 
 
@@ -130,7 +136,9 @@ class EgresadoController extends Controller
      */
     public function destroy($id)
     {
-     
+        $egresado = Egresado::find($id);
+        $egresado->delete();
+        return redirect('/egresados')->with('mensaje', 'Egresado fue borrado completamente');
     }
 }
 
