@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarreraController;
+use App\Http\Controllers\EgresadoController;
 use App\Http\Controllers\Controller;
 
 
@@ -20,10 +21,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/egresados', 'App\Http\Controllers\EgresadoController');
-
 
 Route::resource('carreras', 'App\Http\Controllers\CarreraController');
 
+Route::resource('/egresados', 'App\Http\Controllers\EgresadoController');
+
+Route::put('/egresados/{id}/editar', [EgresadoController::class, 'update'])
+->name('egresado.update')->where('id','[0-9]+');
+
 Route::put('/carreras/{id}/editar', [CarreraController::class, 'update'])
 ->name('carrera.update')->where('id','[0-9]+');
+ 
