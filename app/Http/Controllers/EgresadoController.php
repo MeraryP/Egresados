@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Egresado;
+use Illuminate\Support\Facades\DB;
 
 
 class EgresadoController extends Controller
