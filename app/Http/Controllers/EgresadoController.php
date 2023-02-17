@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Egresado;
+
 
 class EgresadoController extends Controller
 {
@@ -19,7 +21,7 @@ class EgresadoController extends Controller
      */
     public function create()
     {
-       
+        return view ('egresado.create');
     }
 
     /**
@@ -31,7 +33,31 @@ class EgresadoController extends Controller
     public function store(Request $request)
     {
         
-       
+        $request->validate([
+           
+            'identidad'=>'required|unique:egresados,identidad',
+            'nombre'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+            'fecha'=>'required|date',
+            'egreso'=>'required|numeric',
+           
+        ]);
+     
+        $egresados = new Egresado();
+        $egresados->identidad = $request->get('identidad');
+        $egresados->nombre = $request->get('nombre');
+        $egresados->fecha_nacimiento = $request->get('fecha');
+        $egresados->genero = $request->get('genero');
+        $egresados->carreras = $request->get('carrera');
+        $egresados->año_egresado = $request->get('egreso');
+
+
+        $egresados->save();
+
+        if($egresados){
+            return redirect('/egresados')->with('mensaje', 'El egresado fue creado exitosamente.');
+        }else{
+            //retornar con un mensaje de error.
+        }
 
     }
 
