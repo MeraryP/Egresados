@@ -31,3 +31,7 @@ Route::put('/egresados/{id}/editar', [EgresadoController::class, 'update'])
 Route::put('/carreras/{id}/editar', [CarreraController::class, 'update'])
 ->name('carrera.update')->where('id','[0-9]+');
  
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
