@@ -308,7 +308,11 @@ return [
             'route'  => 'carreras.index',   
         ],
 
-
+        [
+            'text' => 'Cambio de contraseña',
+            'icon'    => 'fa fa-key',
+            'route'  => 'contrasenia.cambiar',
+        ],
      
 
 
