@@ -12,9 +12,8 @@ class EgresadoController extends Controller
     public function index(Request $request)
     {
         $texto=trim($request->get('texto'));
-        $egresados =DB::table('egresados')
-        ->select('id','identidad','nombre','fecha_nacimiento','genero','carreras','año_egresado')
-        ->where('nombre' ,'LIKE','%'.$texto.'%')
+        $egresados =Egresado::
+        where('nombre' ,'LIKE','%'.$texto.'%')
         ->orwhere('identidad' ,'LIKE','%'.$texto.'%')
         ->paginate(5);
         return view ('egresado/index',compact('egresados', 'texto'));
@@ -61,7 +60,7 @@ class EgresadoController extends Controller
         $egresados->save();
 
         if($egresados){
-            return redirect('/egresados')->with('mensaje', 'El egresado fue creado exitosamente.');
+            return redirect('/egresado')->with('mensaje', 'El egresado fue creado exitosamente.');
         }else{
             //retornar con un mensaje de error.
         }
@@ -123,7 +122,7 @@ class EgresadoController extends Controller
         $egresado->save();
 
         if($egresado){
-            return redirect('/egresados')->with('mensaje', 'El egresado fue modificado exitosamente.');
+            return redirect('/egresado')->with('mensaje', 'El egresado fue modificado exitosamente.');
         }else{
             //retornar con un mensaje de error.
         }
@@ -139,7 +138,7 @@ class EgresadoController extends Controller
     {
         $egresado = Egresado::find($id);
         $egresado->delete();
-        return redirect('/egresados')->with('mensaje', 'Egresado fue borrado completamente');
+        return redirect('/egresado')->with('mensaje', 'Egresado fue borrado completamente');
     }
 }
 
