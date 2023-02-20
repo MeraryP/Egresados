@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Egresado;
 use Illuminate\Support\Facades\DB;
+use App\Models\Genero;
+use App\Models\Carrera;
 
 
 class EgresadoController extends Controller
@@ -28,7 +30,9 @@ class EgresadoController extends Controller
      */
     public function create()
     {
-        return view ('egresado.create');
+        $carreras = Carrera::all();
+        $generos = Genero::all();
+        return view ('egresado.create', compact('generos'),compact('carreras'));
     }
 
     /**
@@ -40,12 +44,15 @@ class EgresadoController extends Controller
     public function store(Request $request)
     {
         
-        $request->validate([
+        $this->validate($request,[
            
             'identidad'=>'required|unique:egresados,identidad',
             'nombre'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
             'fecha'=>'required|date',
+            'gene_id'=>'required|exists:generos,id',
+            'carre_id'=>'required|exists:carreras,id',
             'egreso'=>'required|numeric',
+            
            
         ]);
      
@@ -53,8 +60,8 @@ class EgresadoController extends Controller
         $egresados->identidad = $request->get('identidad');
         $egresados->nombre = $request->get('nombre');
         $egresados->fecha_nacimiento = $request->get('fecha');
-        $egresados->genero = $request->get('genero');
-        $egresados->carreras = $request->get('carrera');
+        $egresados->gene_id = $request->get('gene_id');
+        $egresados->carre_id = $request->get('carre_id');
         $egresados->año_egresado = $request->get('egreso');
 
 

@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('egresados', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre');
-            $table->integer('año_egresado');
-            $table->date('fecha_nacimiento');
-            $table->string('identidad')->unique();
+        Schema::create('generos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
             $table->timestamps();
-        });
+            
+            }); 
     }
 
     /**
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('egresados');
+        Schema::dropIfExists('generos');
     }
 };

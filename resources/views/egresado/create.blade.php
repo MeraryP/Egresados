@@ -1,6 +1,8 @@
-@extends('layout.plantillaegresados');
+@extends('adminlte::page');
 
-@section('contenido')
+@section('title', 'Egresados')
+
+@section('content')
 <h2>Crear registro</h2>
 
 @if ($errors->any())
@@ -28,28 +30,32 @@
         <input type="text" name="fecha"  id="fecha"  class="form-control" placeholder="0000-00-00">
       </div>
 
-      <div class="mb-3">
+      <div class="for-group">
         <label for="">Género</label>
-        <select class="custom-select" name="genero" id="genero">
-        <option>Femenino</option>
-        <option>Masculino</option>
+        <select class="form-control" name="gene_id">
+        @foreach ($generos as $genero)
+        <option value="{{$genero->id}}">{{$genero->name}}</option>
+        @endforeach      
       </select>
       </div>
 
       <div class="mb-3">
-        <label for="">Carrera</label>
-        <select id="combo2" class="custom-select" name="carrera" id="carrera">  
-        <option>Bachillerato en Ciencias y Letras</option>
-        <option>Bachillerato en Ciencias y Humanidades</option>
-        <option>Perito Mercantil y Contador Público</option>
-        </select>
-      </div>
+      <label for="">Carrera</label>
+
+      <select class="form-control" name="carre_id">
+        @foreach ($carreras as $carrera)
+        <option value="{{$carrera->id}}">{{$carrera->Carrera}}</option>
+        @endforeach      
+      </select>
+      </div> 
+
       <div class="mb-3">
         <label for="">Año de Egreso</label>
         <input type="number" class="form-control" name="egreso"  id="egreso" placeholder="####">
       </div>
+<link rel="stylesheet" type="text/css" href="css/fonts.css" >     
+<button type="submit"class="btn btn-primary" tabindex="4">Guardar</button> 
 
-<button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>     
 <a href="/egresados" class="btn btn-secondary" tabindex="5">Cancelar</a>
 
 
