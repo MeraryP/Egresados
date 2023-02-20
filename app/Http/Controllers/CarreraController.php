@@ -49,13 +49,11 @@ class CarreraController extends Controller
 
         $carreras->save();
 
-        
-        if($carreras){
-            return redirect('/carreras')->with('mensaje', 'la carrera fue modificada exitosamente.');
+        if( $carreras){
+            return redirect('/carreras')->with('mensaje', 'La carrera fue creada exitosamente.');
         }else{
             //retornar con un mensaje de error.
         }
-
         
     }
 
@@ -105,7 +103,12 @@ class CarreraController extends Controller
         $carrera->carrera = $request->get('carrera');
 
         $carrera->save();
-        return redirect ('/carreras');
+
+        if($carrera){
+            return redirect('/carreras')->with('mensaje', 'La carrera fue Modificada exitosamente.');
+        }else{
+            //retornar con un mensaje de error.
+        }
 
     
     }
@@ -121,7 +124,11 @@ class CarreraController extends Controller
         $carrera = Carrera::find($id);
         $carrera->delete();
 
-        return redirect('/carreras')->with('mensaje', 'Egresado fue borrado completamente');
+        if($carreras){
+            return redirect('/carreras')->with('mensaje', 'La carrera fue Eliminda exitosamente.');
+        }else{
+            //retornar con un mensaje de error.
+        }
        
     }
 }

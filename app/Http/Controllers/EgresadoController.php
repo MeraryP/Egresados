@@ -93,8 +93,11 @@ class EgresadoController extends Controller
      */
     public function edit($id)
     {
+
+        $carreras = Carrera::all();
+        $generos = Genero::all();
         $egresado = Egresado::findOrfail($id);
-        return view('egresado.edit')->with('egresado', $egresado);
+        return view('egresado.edit', compact('generos'),compact('carreras'))->with('egresado', $egresado);
     
     }
 
@@ -114,6 +117,8 @@ class EgresadoController extends Controller
             'identidad'=>'required',
             'nombre'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
             'fecha'=>'required|date',
+            'gene_id'=>'required|exists:generos,id',
+            'carre_id'=>'required|exists:carreras,id',
             'egreso'=>'required|numeric',
         ]);
 
@@ -121,8 +126,8 @@ class EgresadoController extends Controller
         $egresado->identidad = $request->get('identidad');
         $egresado->nombre = $request->get('nombre');
         $egresado->fecha_nacimiento = $request->get('fecha');
-        $egresado->genero = $request->get('genero');
-        $egresado->carreras = $request->get('carrera');
+        $egresado->gene_id = $request->get('gene_id');
+        $egresado->carre_id = $request->get('carre_id');
         $egresado->año_egresado = $request->get('egreso');
 
 
