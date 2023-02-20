@@ -1,6 +1,8 @@
-@extends('layout.plantillabase');
+@extends('adminlte::page');
 
-@section('contenido')
+@section('title', 'Carrera')
+
+@section('content')
 <h2>Editar registro</h2>
 
 <form method="POST" action ="{{ route('carrera.update',['id'=>$carrera->id])}}">

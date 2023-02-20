@@ -63,8 +63,8 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
-    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo' => 'Egresados Cosme',
+    'logo_img' => 'imagen/logo.jpeg',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
     'logo_img_xl_class' => 'brand-image-xs',
@@ -109,7 +109,7 @@ return [
     'preloader' => [
         'enabled' => true,
         'img' => [
-            'path' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+            'path' => 'imagen/logo.jpeg',
             'alt' => 'AdminLTE Preloader Image',
             'effect' => 'animation__shake',
             'width' => 60,
@@ -130,10 +130,10 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => false,
-    'usermenu_header_class' => 'bg-primary',
-    'usermenu_image' => false,
-    'usermenu_desc' => false,
+    'usermenu_header' => true,
+    'usermenu_header_class' => 'bg-danger',
+    'usermenu_image' => true,
+    'usermenu_desc' => true,
     'usermenu_profile_url' => false,
 
     /*
@@ -150,9 +150,9 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
-    'layout_fixed_navbar' => null,
-    'layout_fixed_footer' => null,
+    'layout_fixed_sidebar' => true,
+    'layout_fixed_navbar' => true,
+    'layout_fixed_footer' => true,
     'layout_dark_mode' => null,
 
     /*
@@ -213,7 +213,7 @@ return [
     'sidebar_mini' => 'lg',
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
-    'sidebar_collapse_remember' => false,
+    'sidebar_collapse_remember' => true,
     'sidebar_collapse_remember_no_transition' => true,
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
@@ -259,7 +259,7 @@ return [
     'register_url' => 'register',
     'password_reset_url' => 'password/reset',
     'password_email_url' => 'password/email',
-    'profile_url' => false,
+    'profile_url' => 'usuario',
 
     /*
     |--------------------------------------------------------------------------
@@ -292,96 +292,37 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'type'         => 'navbar-search',
-            'text'         => 'search',
-            'topnav_right' => true,
+            'type'         => 'fullscreen-widget',
+            'topnav_right' => false,
+        ],
+        // Sidebar items:
+
+        [
+            'text' => 'Egresados',
+            'icon'    => 'fa fa-graduation-cap', 
+            'route'  => 'egresado.index',   
         ],
         [
-            'type'         => 'fullscreen-widget',
-            'topnav_right' => true,
+            'text' => 'Carreras',
+            'icon'    => 'fa fa-university', 
+            'route'  => 'carreras.index',   
         ],
 
-        // Sidebar items:
+
+       
+
+
         [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Crear Usuario',
+            'icon'    => 'fa fa-user',
+            'route'  => 'usuario.registrar',
+            'can' => 'create_usuario'
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'level_one',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
+            'text' => 'Usuario',
+            'icon'    => 'fa fa-user',
+            'route'  => 'usuario.listado',
+            'can' => 'index_usuario'
         ],
     ],
 
