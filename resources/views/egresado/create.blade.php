@@ -15,7 +15,7 @@
     </div>
 @endif
 
-<form action ="/egresados"  method="POST">
+<form action ="/egresado"  method="POST">
     @csrf
 <div class="mb-3">
     <label for="" class="form-label">Identidad</label>
@@ -56,7 +56,7 @@
 <link rel="stylesheet" type="text/css" href="css/fonts.css" >     
 <button type="submit"class="btn btn-primary" tabindex="4">Guardar</button> 
 
-<a href="/egresados" class="btn btn-secondary" tabindex="5">Cancelar</a>
+<a href="/egresado" class="btn btn-secondary" tabindex="5">Cancelar</a>
 
 
 </form>
