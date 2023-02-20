@@ -23,9 +23,9 @@ Route::get('/', function () {
 
 Route::resource('carreras', 'App\Http\Controllers\CarreraController');
 
-Route::resource('/egresados', 'App\Http\Controllers\EgresadoController');
+Route::resource('/egresado', 'App\Http\Controllers\EgresadoController');
 
-Route::put('/egresados/{id}/editar', [EgresadoController::class, 'update'])
+Route::put('/egresado/{id}/editar', [EgresadoController::class, 'update'])
 ->name('egresado.update')->where('id','[0-9]+');
 
 Route::put('/carreras/{id}/editar', [CarreraController::class, 'update'])

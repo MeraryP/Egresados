@@ -1,6 +1,8 @@
-@extends('layout.plantillaegresados');
+@extends('adminlte::page');
 
-@section('contenido')
+@section('title', 'Egresado')
+
+@section('content')
 
 @if (session('mensaje'))
 <div class="alert alert-success">
@@ -9,30 +11,39 @@
 
 @endif
 
-<h1>Egresados<a href="egresados/create" class="btn btn-primary">Crear</a></h1>
-<br></br>
+<script>
+    function quitarerror(){
+    const elements = document.getElementsByClassName('alert');
+    while (elements[0]){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
 
+setTimeout(quitarerror, 3000);
+</script>
+
+<h1>Egresados <a href="egresado/create" class="btn btn-primary">Crear</a></h1>
 <div class="contrainer">
 
-<div class="row" aling="center">
+<div  aling="center">
 <div class="">
-        <form action="{{route('egresados.index')}}"  method="get">
+        <form action="{{route('egresado.index')}}"  method="get">
         <div class="form-row">
-        <div class="col-sm-4 ">
-            <input type="text" class="form-control" name="texto" value='{{$texto}}'>    
+        <div class="col-sm-6 ">
+            <input type="text" class="form-control" name="texto" value='{{$texto}}' >    
         </div>
-        <div class="col-auto ">
-        <input type="submit" class="btn btn-primary" value="Buscar">
+        <div class="col-sm-2 ">
+        <button type="submit" class="btn btn-primary" value="Buscar" style="width:45%"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <a type="button" href="/egresado" class="btn btn-danger"  style="width:45%"><i class="fa fa-magic" aria-hidden="true"></i></a>
         </div>
         </div>
         </form>
     </div>
     </div>
 
-<table class = "table table-dark table-striped mt-4" class="pagination">
-<thead>
-        <tr>
-            <th scope="col">Id</th>
+<table class = "table ">
+<thead  class="thead-dark">
+<tr>
             <th scope="col">Número de Identidad</th>
             <th scope="col">Nombre Completo</th>
             <th scope="col">Fecha de Nacimiento</th>
@@ -51,19 +62,20 @@
 
         @foreach ($egresados as $egresado)
         <tr>
-            <th scope="row">{{$egresado->id }}</th>
+            
+            
             <td>{{$egresado->identidad}}</td>
             <td>{{$egresado->nombre}}</td>
             <td>{{$egresado->fecha_nacimiento}}</td>
-            <td>{{$egresado->genero}}</td>
-            <td>{{$egresado->carreras}}</td>
+            <td>{{$egresado->genero->name}}</td>
+            <td>{{$egresado->carreras->Carrera}}</td>
             <td>{{$egresado->año_egresado}}</td>
            
            
 
             <td>
-                <form action="{{route ('egresados.destroy',$egresado->id)}}" method="POST"> 
-                <a href="/egresados/{{$egresado->id}}/edit" class="btn btn-info">Editar</a>
+                <form action="{{route ('egresado.destroy',$egresado->id)}}" method="POST"> 
+                <a href="/egresado/{{$egresado->id}}/edit" class="btn btn-info">Editar</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Borrar</button>
@@ -71,11 +83,14 @@
             </td>
         </tr>
 
-
         @endforeach
     </tbody>
- 
+
+
+
 </table>
 {{$egresados->links()}}
 
 @endsection 
+
+
