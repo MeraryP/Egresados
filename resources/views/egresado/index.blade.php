@@ -92,5 +92,3 @@ setTimeout(quitarerror, 3000);
 {{$egresados->links()}}
 
 @endsection 
-
-
