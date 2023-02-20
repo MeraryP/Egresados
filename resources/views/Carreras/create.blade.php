@@ -1,6 +1,8 @@
-@extends('layout.plantillabase');
+@extends('adminlte::page');
 
-@section('contenido')
+@section('title', 'Carrera')
+
+@section('content')
 <h2>Crear registro</h2>
 
 @if ($errors->any())

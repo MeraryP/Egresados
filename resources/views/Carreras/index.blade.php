@@ -1,6 +1,8 @@
-@extends('layout.plantillabase');
+@extends('adminlte::page');
 
-@section('contenido')
+@section('title', 'Carrera')
+
+@section('content')
 
 @if (session('mensaje'))
 <div class="alert alert-success">
@@ -8,11 +10,23 @@
 </div>
 @endif
 
+<script>
+    function quitarerror(){
+    const elements = document.getElementsByClassName('alert');
+    while (elements[0]){
+        elements[0].parentNode.removeChild(elements[0]);
+    }
+}
+
+setTimeout(quitarerror, 3000);
+</script>
+
 <h1>Carreras <a href="carreras/create" class="btn btn-primary">Crear</a></h1>
 
 
-<table class = "table table-dark table-striped mt-4">
-    <thead>
+<table class = "table ">
+
+    <thead class="thead-dark">
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Carrera</th>
@@ -29,10 +43,13 @@
 
             <td>
                 <form action="{{route ('carreras.destroy',$carrera->id )}}" method="POST"> 
-                <a href="/carreras/{{$carrera->id}}/edit" class="btn btn-info">Editar</a>
+                <a type="button" href="/carreras/{{$carrera->id}}/edit" class="btn btn-info">
+                <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Borrar</button>
+                <a type="button" class="btn btn-danger" onClick="return confirm('Esta seguro de eliminar el Registro')">
+                <i class="fa fa-window-close" aria-hidden="true"></i>
+            </a>
                 </form>
             </td>
         </tr>
