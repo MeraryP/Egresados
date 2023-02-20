@@ -44,7 +44,8 @@ setTimeout(quitarerror, 3000);
 <table class = "table ">
 <thead  class="thead-dark">
 <tr>
-            <th scope="col">Número de Identidad</th>
+            <th scope="col">No</th>
+            <th scope="col">ID</th>
             <th scope="col">Nombre Completo</th>
             <th scope="col">Fecha de Nacimiento</th>
             <th scope="col">Género</th>
@@ -60,10 +61,10 @@ setTimeout(quitarerror, 3000);
     <tbody>
     
 
-        @foreach ($egresados as $egresado)
+        @foreach ($egresados as  $n=>$egresado)
         <tr>
             
-            
+            <th scope="row">{{++$n + ($egresados->perPage()*($egresados->currentPage()-1))}}</th>
             <td>{{$egresado->identidad}}</td>
             <td>{{$egresado->nombre}}</td>
             <td>{{$egresado->fecha_nacimiento}}</td>
@@ -75,10 +76,12 @@ setTimeout(quitarerror, 3000);
 
             <td>
                 <form action="{{route ('egresado.destroy',$egresado->id)}}" method="POST"> 
-                <a href="/egresado/{{$egresado->id}}/edit" class="btn btn-info">Editar</a>
+                <a type="button" href="/egresado/{{$egresado->id}}/edit" class="btn btn-info">
+                <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger">Borrar</button>
+                <button type="submit" class="btn btn-danger" onClick="return confirm('Esta seguro de eliminar el Registro')">
+                 <i class="fa fa-window-close" aria-hidden="true"></i></button>
                 </form>
             </td>
         </tr>
