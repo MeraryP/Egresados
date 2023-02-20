@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(CarreraSeeder::class);
-        $this->call(GeneroSeeder::class); 
+        $this->call(GeneroSeeder::class);
         $this->call(UserSeeder::class);
     }
 }
