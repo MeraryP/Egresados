@@ -1,6 +1,9 @@
-@extends('layout.plantillaegresados');
+@extends('adminlte::page');
 
-@section('contenido')
+@section('title','Egresado')
+
+@section('content')
+
 <h2>Editar registro</h2>
 
 @if ($errors->any())
@@ -30,22 +33,28 @@
         <input type="text" name="fecha"  id="fecha"  class="form-control" placeholder="0000-00-00" value="{{ $egresado->fecha_nacimiento }}">
       </div>
 
-      <div class="mb-3">
+      
+      <div class="for-group">
         <label for="">Género</label>
-        <select class="custom-select" name="genero" id="genero" value="{{ $egresado->genero }}">
-        <option {{ $egresado->genero == "Femenino" ? "selected" : ""  }}>Femenino</option>
-        <option {{ $egresado->genero == "Masculino" ? "selected" : ""  }}>Masculino</option>
+        <select class="form-control" name="gene_id">
+        <option value="{{$egresado->gene_id}}"> {{$egresado->genero->name}}</option>
+        @foreach ($generos as $genero)
+        <option value="{{$genero->id}}">{{$genero->name}}</option>
+        @endforeach      
       </select>
       </div>
 
+       
       <div class="mb-3">
-        <label for="">Carrera</label>
-        <select id="combo2" class="custom-select" name="carrera" id="carrera" value="{{ $egresado->carreras }}">
-        <option {{ $egresado->carreras == "Bachillerato en Ciencias y Letras" ? "selected" : "" }}>Bachillerato en Ciencias y Letras</option>
-        <option {{ $egresado->carreras == "Bachillerato en Ciencias y Humanidades" ? "selected" : "" }}>Bachillerato en Ciencias y Humanidades</option>
-        <option {{ $egresado->carreras == "Perito Mercantil y Contador Público" ? "selected" : "" }}>Perito Mercantil y Contador Público</option>
-        </select>
-      </div>
+      <label for="">Carrera</label>
+      <select class="form-control" name="carre_id">
+      <option value="{{$egresado->carre_id}}"> {{$egresado->carreras->Carrera}}</option> 
+        @foreach ($carreras as $carrera)
+        <option value="{{$carrera->id}}">{{$carrera->Carrera}}</option>
+        @endforeach      
+      </select>
+      </div> 
+
       <div class="mb-3">
         <label for="">Año de Egreso</label>
         <input type="number" class="form-control" name="egreso"  id="egreso" placeholder="####" value="{{ $egresado->año_egresado }}">
