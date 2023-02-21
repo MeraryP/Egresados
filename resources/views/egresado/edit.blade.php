@@ -61,7 +61,7 @@
       </div>
 
 <button type="submit" class="btn btn-primary" tabindex="4">Guardar</button>     
-<a href="/egresados" class="btn btn-secondary" tabindex="5">Cancelar</a>
+<a href="/egresado" class="btn btn-secondary" tabindex="5">Cancelar</a>
 
 </form>
 
