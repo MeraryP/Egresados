@@ -50,7 +50,7 @@ class EgresadoController extends Controller
             'fecha'=>'required|date',
             'gene_id'=>'required|exists:generos,id',
             'carre_id'=>'required|exists:carreras,id',
-            'egreso'=>'required|numeric',
+            'egreso'=>'required|numeric|min:2017',
             
            
         ]);
@@ -119,7 +119,7 @@ class EgresadoController extends Controller
             'fecha'=>'required|date',
             'gene_id'=>'required|exists:generos,id',
             'carre_id'=>'required|exists:carreras,id',
-            'egreso'=>'required|numeric',
+            'egreso'=>'required|numeric|min:2017',
         ]);
 
         $egresado = Egresado::find($id);
