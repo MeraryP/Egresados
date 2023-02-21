@@ -21,7 +21,7 @@
 setTimeout(quitarerror, 3000);
 </script>
 
-<h1>Carreras <a href="carreras/create" class="btn btn-primary">Crear</a></h1>
+<h1>Carreras <a href="carreras/create" class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a></h1>
 
 
 <table class = "table ">

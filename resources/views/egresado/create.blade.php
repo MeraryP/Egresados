@@ -54,9 +54,9 @@
         <input type="number" class="form-control" name="egreso"  id="egreso" placeholder="####">
       </div>
 <link rel="stylesheet" type="text/css" href="css/fonts.css" >     
-<button type="submit"class="btn btn-primary" tabindex="4">Guardar</button> 
+<button type="submit"class="btn btn-primary" tabindex="4"><span class="fas fa-user-plus"></span> Guardar</button> 
 
-<a href="/egresado" class="btn btn-secondary" tabindex="5">Cancelar</a>
+<a href="/egresado" class="btn btn-secondary" tabindex="5"><i class="fa fa-times" aria-hidden="true"></i> Cancelar</a>
 
 
 </form>

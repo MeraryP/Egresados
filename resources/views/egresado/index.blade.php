@@ -22,7 +22,7 @@
 setTimeout(quitarerror, 3000);
 </script>
 
-<h1>Egresados <a href="egresado/create" class="btn btn-primary">Crear</a></h1>
+<h1>Egresados <a href="egresado/create" class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a></h1>
 <div class="contrainer">
 
 <div  aling="center">
@@ -45,7 +45,7 @@ setTimeout(quitarerror, 3000);
 <thead  class="thead-dark">
 <tr>
             <th scope="col">No</th>
-            <th scope="col">ID</th>
+            <th scope="col">Identidad</th>
             <th scope="col">Nombre Completo</th>
             <th scope="col">Fecha de Nacimiento</th>
             <th scope="col">Género</th>
