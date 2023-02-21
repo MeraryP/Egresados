@@ -1,4 +1,3 @@
-
 @extends('adminlte::page');
 
 @section('title', 'Carrera')
@@ -37,9 +36,10 @@ setTimeout(quitarerror, 3000);
 
     <tbody>
         
-        @foreach ($carreras as $carrera)
+    @foreach ($carreras as $n=>$carrera)
         <tr>
-            <td>{{$carrera->id}}</td>
+            <th scope="row">{{++$n }}</th>
+       
             <td>{{$carrera->Carrera}}</td>
 
             <td>
@@ -48,13 +48,12 @@ setTimeout(quitarerror, 3000);
                 <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                 @csrf
                 @method('DELETE')
-                <a type="button" class="btn btn-danger" onClick="return confirm('Esta seguro de eliminar el Registro')">
-                <i class="fa fa-window-close" aria-hidden="true"></i>
-            </a>
+                <button type="submit" class="btn btn-danger" onClick="return confirm('Esta seguro de eliminar el Registro')">
+                <i class="fa fa-window-close" aria-hidden="true"></i> </button>
                 </form>
             </td>
         </tr>
-
+        
         @endforeach
     </tbody>
 </table>

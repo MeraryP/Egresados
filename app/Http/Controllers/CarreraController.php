@@ -124,8 +124,8 @@ class CarreraController extends Controller
         $carrera = Carrera::find($id);
         $carrera->delete();
 
-        if($carreras){
-            return redirect('/carreras')->with('mensaje', 'La carrera fue Eliminda exitosamente.');
+        if($carrera){
+            return redirect('/carreras')->with('mensaje', 'La carrera fue Eliminada exitosamente.');
         }else{
             //retornar con un mensaje de error.
         }
