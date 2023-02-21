@@ -37,7 +37,7 @@
       <div class="for-group">
         <label for="">Género</label>
         <select class="form-control" name="gene_id">
-        <option value="{{$egresado->gene_id}}"> {{$egresado->genero->name}}</option>
+        <option style="display:none" value="{{$egresado->gene_id}}"> {{$egresado->genero->name}}</option>
         @foreach ($generos as $genero)
         <option value="{{$genero->id}}">{{$genero->name}}</option>
         @endforeach      
@@ -48,7 +48,7 @@
       <div class="mb-3">
       <label for="">Carrera</label>
       <select class="form-control" name="carre_id">
-      <option value="{{$egresado->carre_id}}"> {{$egresado->carreras->Carrera}}</option> 
+      <option style="display:none"value="{{$egresado->carre_id}}"> {{$egresado->carreras->Carrera}}</option> 
         @foreach ($carreras as $carrera)
         <option value="{{$carrera->id}}">{{$carrera->Carrera}}</option>
         @endforeach      

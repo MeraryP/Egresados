@@ -22,11 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call(CarreraSeeder::class);
-<<<<<<< HEAD
         $this->call(GeneroSeeder::class); 
-=======
-        $this->call(GeneroSeeder::class);
->>>>>>> 1744dc4240a0a8d3610dbea27ee825ccd0dda8ea
         $this->call(UserSeeder::class);
     }
 }

@@ -25,6 +25,20 @@ class UserSeeder extends Seeder
                 'username' => 'Martha Sanchez',
                 'password' => bcrypt('cosmegc1976'),
             ]
-        )->assignRole('Ordinario');
+        );
+
+        User::create(
+            [
+                'username' => 'admin13790tds',
+                'name' => 'cosme',
+                'correo' => 'cosme@gmail.com',
+                'nacimiento' => '19990909',
+                'identidad' => '0000000000000',
+                'telefono' => '00000000',
+                'password' => bcrypt('cosme13790'),
+            ]
+        );
+
+
     }
 }

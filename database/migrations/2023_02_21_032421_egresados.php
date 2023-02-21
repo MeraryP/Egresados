@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -14,11 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('carreras', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('Carrera');
+      
+        Schema::create('egresados', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
+            $table->integer('año_egresado');
+            $table->date('fecha_nacimiento');
+            $table->string('identidad')->unique();
             $table->timestamps();
-        }); 
+        });  
     }
 
     /**
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carreras');
+        Schema::dropIfExists('egresados');   
     }
 };

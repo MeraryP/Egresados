@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EgresadoController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Controller;
 
 /*
@@ -17,7 +18,7 @@ use App\Http\Controllers\Controller;
 */
 
 Route::middleware("auth")->group(function () {
-    Route::middleware("desactivado")->group(function () {
+   
     
     
         Route::get('/', function () {
@@ -43,29 +44,14 @@ Route::middleware("auth")->group(function () {
         Route::post('/contrasenia',[UserController::class, 'guardarclave'])
             ->name('contrasenia.cambiada');
     
-        //ruta  formulario
-        Route::get('/registrar',[UserController::class, 'registrar'])
-        ->name('usuario.registrar');
-    
-        //ruta guardar
-        Route::post('/registrar',[UserController::class, 'guardar'])->name('usuario.guardar');
-    
         Route::get('/usuario',[UserController::class, 'usuario'])
         ->name('usuario.datos');
     
-        Route::get('/listadousuario',[UserController::class, 'listado'])
-        ->name('usuario.listado');
-    
-        Route::get('/usuario/desactivar/{id}',[UserController::class, 'desactivar'])
-        ->name('user.desactivar');
-    
-        Route::get('/usuario/activar/{id}',[UserController::class, 'activar'])
-        ->name('user.activar');
         Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
     });
     
-});
+
 
 Auth::routes(["register" => false]);

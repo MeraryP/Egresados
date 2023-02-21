@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('egresados', function (Blueprint $table) {
-            $table->unsignedInteger('gene_id');
-
-            $table->foreign('gene_id')->references('id')->on('generos')->onDelete('cascade');
+        Schema::create('carreras', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('Carrera');
+            $table->timestamps();
         });
     }
 
@@ -27,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('egresados', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('carreras'); 
     }
 };
