@@ -316,18 +316,7 @@ return [
      
 
 
-        [
-            'text' => 'Crear Usuario',
-            'icon'    => 'fa fa-user',
-            'route'  => 'usuario.registrar',
-            'can' => 'create_usuario'
-        ],
-        [
-            'text' => 'Usuario',
-            'icon'    => 'fa fa-user',
-            'route'  => 'usuario.listado',
-            'can' => 'index_usuario'
-        ],
+     
     ],
 
     /*

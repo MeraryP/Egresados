@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Rules\Contraactual;
 use Illuminate\Support\Facades\Gate;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+
 
 
 class UserController extends Controller
@@ -77,9 +76,7 @@ class UserController extends Controller
      */
     public function registrar()
     {
-        abort_if(Gate::denies('create_usuario'),redirect()->route('welcome')->with('denegar','No tiene acceso a esta sección'));
-
-        $roles = Role::all();
+        
         return view ('User.registrar', compact('roles'));
     }
 
@@ -104,7 +101,7 @@ class UserController extends Controller
             'identidad'=> 'required|unique:users,identidad',
             'telefono'=> 'required|unique:users,telefono',
             'password' => 'required|min:8|confirmed',
-            'rol'=> 'required|exists:roles,name',
+          
         ];
 
         $mensaje=[
@@ -133,8 +130,7 @@ class UserController extends Controller
             'password.min' => 'La contraseña debe de tener mas de 8 caracteres',
             'password.confirmed' => 'La contraseña no coinciden',
 
-            'rol.required' => 'El cargo no puede estar vacío',
-            'rol.exists' => 'El cargo no es valido',
+            
         ];
 
         $this->validate($request,$rules,$mensaje);
@@ -147,7 +143,6 @@ class UserController extends Controller
         $user->telefono = $request->input('telefono');
         $user->username = $request->input('username');
         $user->password = Hash::make($request->input('password'));
-        $user->assignRole($request->input('rol'));
         $user->save();
 
         if($user){
