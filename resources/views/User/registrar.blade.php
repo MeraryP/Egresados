@@ -118,31 +118,6 @@
             @enderror
         </div>
 
-        {{-- Rols --}}
-        <div class="input-group mb-3">
-            <select name="rol" id="rol" class="form-control @error('rol') is-invalid @enderror">
-                @if(old('rol'))
-                    <option value="{{old('rol')}}" style="display:none">{{old('rol')}}</option>
-                @else
-                    <option value="" style="display:none">Seleccione el cargo</option>
-                @endif
-                @foreach($roles as $r)
-                    <option value="{{$r->name}}">{{$r->name}}</option>
-                @endforeach
-            </select>
-
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-users"></span>
-                </div>
-            </div>
-
-            @error('rol')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
 
         {{-- Password field --}}
         <div class="input-group mb-3">

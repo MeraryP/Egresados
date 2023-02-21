@@ -21,13 +21,13 @@ class GeneroSeeder extends Seeder
             'Masculino',
    
            
-           ];
-           foreach($generos as $genero){
+        ];
+        foreach($generos as $genero){
                Genero::create([
                    'name'=> $genero
                ]);
    
                
-           }
+        }
     }
 }
