@@ -70,4 +70,17 @@ class UserController extends Controller
         return view('User.datos');
     }
 
+     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function registrar()
+    {
+        abort_if(Gate::denies('create_usuario'),redirect()->route('welcome')->with('denegar','No tiene acceso a esta sección'));
+
+        $roles = Role::all();
+        return view ('User.registrar', compact('roles'));
+    } 
+
 }

@@ -22,18 +22,18 @@
 setTimeout(quitarerror, 3000);
 </script>
 
-<h1>Egresados <a href="egresado/create" class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a></h1>
+<a href="egresado/create"  class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a>
 <div class="contrainer">
 
 <div  aling="center">
 <div class="">
         <form action="{{route('egresado.index')}}"  method="get">
         <div class="form-row">
-        <div class="col-sm-6 ">
+        <div class="col-sm-5 ">
             <input type="text" class="form-control" name="texto" value='{{$texto}}' >    
         </div>
         <div class="col-sm-2 ">
-        <button type="submit" class="btn btn-primary" value="Buscar" style="width:45%"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <button type="submit" class="btn btn-primary" value="Buscar" style="width:45%" ><i class="fa fa-search" aria-hidden="true"></i></button>
         <a type="button" href="/egresado" class="btn btn-danger"  style="width:45%"><i class="fa fa-magic" aria-hidden="true"></i></a>
         </div>
         </div>
@@ -41,7 +41,7 @@ setTimeout(quitarerror, 3000);
     </div>
     </div>
 
-<table class = "table ">
+<table class = "table table-sm table-bordered ">
 <thead  class="thead-dark">
 <tr>
             <th scope="col">No</th>
@@ -92,6 +92,18 @@ setTimeout(quitarerror, 3000);
 
 
 </table>
+
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <h1>Egresados</h1>
+      </li>
 {{$egresados->links()}}
 
 @endsection 

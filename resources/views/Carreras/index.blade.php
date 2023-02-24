@@ -21,12 +21,12 @@
 setTimeout(quitarerror, 3000);
 </script>
 
-<h1>Carreras <a href="carreras/create" class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a></h1>
+ <a href="carreras/create" class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a>
 
 
-<table class = "table ">
+<table class = "table table table-sm table-bordered">
 
-    <thead class="thead-dark">
+    <thead class="thead-dark"  >
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Carrera</th>
@@ -57,4 +57,16 @@ setTimeout(quitarerror, 3000);
         @endforeach
     </tbody>
 </table>
+
+
+<!-- Navbar -->
+<nav class="main-header navbar navbar-expand navbar-white">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+               <h1>Carreras</h1>
+      </li>
 @endsection 

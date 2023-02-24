@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Inicio de sesion',
     'title_prefix' => '',
     'title_postfix' => '',
 
