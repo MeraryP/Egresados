@@ -102,6 +102,5 @@ setTimeout(quitarerror, 3000);
       <li class="nav-item d-none d-sm-inline-block">
         <h1>Editar Registro</h1>
       </li>
-{{$egresados->links()}}
 
 @endsection 
