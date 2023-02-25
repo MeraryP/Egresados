@@ -91,6 +91,7 @@ setTimeout(quitarerror, 3000);
 
 
   </table>
+  {{$egresados->links()}}
 
 
   <!-- Navbar -->
@@ -103,6 +104,5 @@ setTimeout(quitarerror, 3000);
       <li class="nav-item d-none d-sm-inline-block">
         <h1>Egresados</h1>
       </li>
-{{$egresados->links()}}
 
 @endsection 
