@@ -20,8 +20,11 @@
 
 setTimeout(quitarerror, 3000);
 </script>
-
+<br>
+<div align="right">
  <a href="carreras/create" class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a>
+</div>
+<br>
 
 
 <table class = "table table table-sm table-bordered">

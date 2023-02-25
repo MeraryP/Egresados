@@ -21,25 +21,27 @@
 
 setTimeout(quitarerror, 3000);
 </script>
-
-<a href="egresado/create"  class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a>
+<br>
+<br>
 <div class="contrainer">
 
-<div  aling="center">
-<div class="">
-        <form action="{{route('egresado.index')}}"  method="get">
-        <div class="form-row">
-        <div class="col-sm-5 ">
-            <input type="text" class="form-control" name="texto" value='{{$texto}}' >    
-        </div>
-        <div class="col-sm-2 ">
-        <button type="submit" class="btn btn-primary" value="Buscar" style="width:45%" ><i class="fa fa-search" aria-hidden="true"></i></button>
-        <a type="button" href="/egresado" class="btn btn-danger"  style="width:45%"><i class="fa fa-magic" aria-hidden="true"></i></a>
-        </div>
-        </div>
-        </form>
+<div  align="center">
+    <form action="{{route('egresado.index')}}"  method="get">
+    <div class="form-row">
+    <div class="col-sm-5 ">
+        <input type="text" class="form-control" name="texto" value='{{$texto}}' >    
+    </div>
+    <div class="col-sm-2 ">
+    <button type="submit" class="btn btn-primary" value="Buscar" style="width:45%" ><i class="fa fa-search" aria-hidden="true"></i></button>
+    <a type="button" href="/egresado" class="btn btn-danger"  style="width:45%"><i class="fa fa-magic" aria-hidden="true"></i></a>
     </div>
     </div>
+    <div align="right">
+    <a href="egresado/create"  class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a>
+    </div>
+    </form>
+
+</div>
 
 <table class = "table table-sm table-bordered ">
 <thead  class="thead-dark">
@@ -79,11 +81,12 @@ setTimeout(quitarerror, 3000);
                 <a type="button" href="/egresado/{{$egresado->id}}/edit" class="btn btn-info">
                 <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                 @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger" onClick="return confirm('Esta seguro de eliminar el Registro')">
-                 <i class="fa fa-window-close" aria-hidden="true"></i></button>
-                </form>
-            </td>
+                @method('DELETE')       
+               <button type="submit" class="btn btn-danger" onClick="return confirm('Esta seguro de eliminar el Registro')">
+               <i class="fa fa-window-close" aria-hidden="true"></i></button>
+
+               </form>
+             </td>
         </tr>
 
         @endforeach
@@ -91,7 +94,7 @@ setTimeout(quitarerror, 3000);
 
 
 
-</table>
+  </table>
 
 
   <!-- Navbar -->
