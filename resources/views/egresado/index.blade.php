@@ -91,9 +91,6 @@ setTimeout(quitarerror, 3000);
     </tbody>
 
   </table>
-
-
-
-{{$egresados->links()}}
+  {{$egresados->links()}}
 
 @endsection 
