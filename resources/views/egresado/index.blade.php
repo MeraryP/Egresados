@@ -67,8 +67,6 @@ setTimeout(quitarerror, 3000);
             <th scope="row">{{++$n + ($egresados->perPage()*($egresados->currentPage()-1))}}</th>
             <td>{{$egresado->identidad}}</td>
             <td>{{$egresado->nombre}}</td>
-            <td>{{$egresado->fecha_nacimiento}}</td>
-            <td>{{$egresado->genero->name}}</td>
             <td>{{$egresado->carreras->Carrera}}</td>
             <td>{{$egresado->año_egresado}}</td>
            
