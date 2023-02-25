@@ -22,28 +22,31 @@
 setTimeout(quitarerror, 3000);
 </script>
 <br>
-<br>
+
 <div class="contrainer">
 
 
 
-<div  align="center">
+<div  align="center" >
     <form action="{{route('egresado.index')}}"  method="get">
-    <div class="form-row">
-    <div class="col-sm-5 ">
+    <div >
+    <div class="col-sm-5 " style="float:left">
         <input type="text" class="form-control" name="texto" value='{{$texto}}' >    
     </div>
-    <div class="col-sm-2 ">
-    <button type="submit" class="btn btn-primary" value="Buscar" style="width:45%" ><i class="fa fa-search" aria-hidden="true"></i></button>
-    <a type="button" href="/egresado" class="btn btn-danger"  style="width:45%"><i class="fa fa-magic" aria-hidden="true"></i></a>
+    <div class="col-sm-2 " style="float:left">
+    <button type="submit" class="btn btn-primary" value="Buscar" style="width:45%;height:37px" ><i class="fa fa-search" aria-hidden="true"></i></button>
+    <a type="button" href="/egresado" class="btn btn-danger"  style="width:45%;height:37px"><i class="fa fa-magic" aria-hidden="true"></i></a>
     </div>
-    </div>
-    <div align="right">
+    <div align="right" style="float:right">
     <a href="egresado/create"  class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a>
     </div>
+    </div>
+    
     </form>
 
 </div>
+<br>
+<br>
 
 <table class = "table table-sm table-bordered ">
 <thead  class="thead-dark">
