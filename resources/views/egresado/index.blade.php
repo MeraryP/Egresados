@@ -49,8 +49,6 @@ setTimeout(quitarerror, 3000);
             <th scope="col">No</th>
             <th scope="col">Identidad</th>
             <th scope="col">Nombre Completo</th>
-            <th scope="col">Fecha de Nacimiento</th>
-            <th scope="col">Género</th>
             <th scope="col">Carrera</th>
             <th scope="col">Año de Egreso</th>
             
