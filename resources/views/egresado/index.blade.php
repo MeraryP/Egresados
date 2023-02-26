@@ -1,15 +1,26 @@
-@extends('adminlte::page');
+@extends('layouts.madre');
 
 @section('title', 'Egresado')
 
 @section('content')
+<script>
+    var msg = '{{Session::get('mensaje')}}';
+    var exist = '{{Session::has('mensaje')}}';
+    if(exist){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: msg,
+            showConfirmButton: false,
+            toast: true,
+            background: '#0be004ab',
+            timer: 3500
+        })
+    }
 
-@if (session('mensaje'))
-<div class="alert alert-success">
-    {{ session('mensaje') }}
-</div>
+</script>
 
-@endif
+
 
 <script>
     function quitarerror(){
@@ -78,13 +89,35 @@ setTimeout(quitarerror, 3000);
            
 
             <td>
-                <form action="{{route ('egresado.destroy',$egresado->id)}}" method="POST"> 
-                <a type="button" href="/egresado/{{$egresado->id}}/edit" class="btn btn-info">
+            <a type="button" href="/egresado/{{$egresado->id}}/edit" class="btn btn-info">
                 <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                <button type="bottom" onClick="borrar{{$egresado->id}}()" class="btn btn-danger">
+               <i class="fa fa-window-close" aria-hidden="true"></i></button>
+                <form action="{{route ('egresado.destroy',$egresado->id)}}" method="POST" id="eliminar{{$egresado->id}}"> 
+                
                 @csrf
                 @method('DELETE')       
-               <button type="submit" class="btn btn-danger" onClick="return confirm('Esta seguro de eliminar el Registro')">
-               <i class="fa fa-window-close" aria-hidden="true"></i></button>
+               
+               <script>
+                function borrar{{$egresado->id}}(){
+                    Swal.fire({
+  title: 'Eliminar Egresado',
+  text: '¿Desea eliminar al egresado seleccionado?',
+  icon: 'error',
+  showCancelButton: true,
+  confirmButtonText: 'Si',
+  cancelButtonText: `No`,
+}).then((result) => {
+  /* Read more about isConfirmed, isDenied below */
+  if (result.value) {
+    document.getElementById('eliminar{{$egresado->id}}').submit();
+  } else {
+    
+  }
+})
+                }
+
+                </script>
 
                </form>
              </td>
