@@ -119,5 +119,16 @@ class CarreraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    
+    public function destroy($id)
+    {
+        $carrera = Carrera::find($id);
+        $carrera->delete();
+
+        if($carrera){
+            return redirect('/carreras')->with('mensaje', 'La carrera fue Eliminada exitosamente.');
+        }else{
+            //retornar con un mensaje de error.
+        }
+       
+    }
 }

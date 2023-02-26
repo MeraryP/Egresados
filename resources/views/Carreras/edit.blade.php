@@ -1,4 +1,4 @@
-@extends('layouts.madre');
+@extends('adminlte::page');
 
 @section('title', 'Carrera')
 
@@ -15,7 +15,7 @@
     <input type="text" name="carrera" id="carrera" class="form-control" value="{{ $carrera->Carrera }}">
 </div>
 
-<button type="submit" class="btn btn-primary" tabindex="4"><span class="fas fa-user-plus"></span>Guardar cambios</button>
+<button type="submit" class="btn btn-primary" tabindex="4"><span class="fas fa-user-plus"></span> Guardar cambios</button>
 <a href="/carreras" class="btn btn-secondary" tabindex="5"><i class="fa fa-times" aria-hidden="true"></i> Cancelar</a>
 
 <!-- Navbar -->

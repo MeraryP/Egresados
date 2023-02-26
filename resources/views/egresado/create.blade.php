@@ -1,4 +1,4 @@
-@extends('layouts.madre');
+@extends('adminlte::page');
 
 @section('title', 'Egresados')
 

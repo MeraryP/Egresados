@@ -3,10 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\EgresadoController;
-use App\Models\Egresado;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Eloquent\Model;
 
 class HomeController extends Controller
 {
@@ -27,8 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        $graficos = Egresado::select('año_egresado', DB::raw('count(*)as cantidad'))->groupby ('año_egresado')->orderby('año_egresado')->get();
-        return view('welcome')->with('graficos', $graficos);
+        return view('welcome');
     }
 }

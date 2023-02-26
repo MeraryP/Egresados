@@ -1,4 +1,5 @@
-@extends('layouts.madre');
+@extends('adminlte::page');
+
 @section('title', 'Carrera')
 
 @section('content')

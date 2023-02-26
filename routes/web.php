@@ -3,9 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EgresadoController;
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +20,7 @@ use App\Http\Controllers\UserController;
 Route::middleware("auth")->group(function () {
    
     
-   
-
+    
         Route::get('/', function () {
             return view('welcome');
         })->name('welcome');
@@ -38,11 +36,11 @@ Route::middleware("auth")->group(function () {
        ->name('carrera.update')->where('id','[0-9]+');
         
     
-        //ruta  formulario cambiar contraseña
+        //ruta  formulario
         Route::get('/contrasenia',[UserController::class, 'formularioclave'])
         ->name('contrasenia.cambiar');
     
-        //ruta guardar guardar contraseña
+        //ruta guardar
         Route::post('/contrasenia',[UserController::class, 'guardarclave'])
             ->name('contrasenia.cambiada');
     
