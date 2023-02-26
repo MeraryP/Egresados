@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EgresadoController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Controller;
 
 /*
@@ -21,10 +22,7 @@ Route::middleware("auth")->group(function () {
    
     
     
-        Route::get('/', function () {
-            return view('welcome');
-        })->name('welcome');
-
+       
         Route::resource('carreras', 'App\Http\Controllers\CarreraController');
 
        Route::resource('/egresado', 'App\Http\Controllers\EgresadoController');
@@ -47,7 +45,7 @@ Route::middleware("auth")->group(function () {
         Route::get('/usuario',[UserController::class, 'usuario'])
         ->name('usuario.datos');
     
-        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
     });
