@@ -297,6 +297,11 @@ return [
         ],
         // Sidebar items:
 
+        [   'text' => 'profile',
+            'url'=>'',
+            'topnav'=>true,
+            'id'=>'titulo-id'
+    ],
         [
             'text' => 'Egresados',
             'icon'    => 'fa fa-graduation-cap', 

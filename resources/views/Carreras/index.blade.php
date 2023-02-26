@@ -1,6 +1,6 @@
 @extends('layouts.madre');
 
-@section('title', 'Carrera')
+@section('title', 'Carreras')
 
 @section('content')
 <script>
@@ -70,14 +70,5 @@ setTimeout(quitarerror, 3000);
 </table>
 
 
-<!-- Navbar -->
-    <!-- Left navbar links -->
-    <nav class="main-header navbar navbar-expand navbar-white">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-               <h1>Carreras</h1>
-      </li>
+
 @endsection 
