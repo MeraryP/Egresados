@@ -1,14 +1,24 @@
-@extends('adminlte::page');
+@extends('layouts.madre');
 
 @section('title', 'Carrera')
 
 @section('content')
+<script>
+    var msg = '{{Session::get('mensaje')}}';
+    var exist = '{{Session::has('mensaje')}}';
+    if(exist){
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: msg,
+            showConfirmButton: false,
+            toast: true,
+            background: '#0be004ab',
+            timer: 3500
+        })
+    }
 
-@if (session('mensaje'))
-<div class="alert alert-success">
-    {{ session('mensaje') }}
-</div>
-@endif
+</script>
 
 <script>
     function quitarerror(){
@@ -27,7 +37,7 @@ setTimeout(quitarerror, 3000);
 <br>
 
 
-<table class = "table table table-sm table-bordered">
+<table class = "table table-sm table-bordered">
 
     <thead class="thead-dark"  >
         <tr>
@@ -50,9 +60,7 @@ setTimeout(quitarerror, 3000);
                 <a type="button" href="/carreras/{{$carrera->id}}/edit" class="btn btn-info">
                 <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                 @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger" onClick="return confirm('Esta seguro de eliminar el Registro')">
-                <i class="fa fa-window-close" aria-hidden="true"></i> </button>
+              
                 </form>
             </td>
         </tr>
