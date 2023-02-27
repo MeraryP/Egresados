@@ -182,7 +182,7 @@
         </div>
 
         {{-- Register button --}}
-        <button type="submit" class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
+        <button type="submit"  class="btn btn-primary" style="width:100%">
             <span class="fas fa-user-plus"></span>
             Guardar datos
         </button>

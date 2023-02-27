@@ -23,6 +23,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(CarreraSeeder::class);
         $this->call(GeneroSeeder::class); 
+        $this->call(RoleSeeder::class);
+        $this->call(PermissionSeeder::class);
+        $this->call(RoleHasPermissionSeeder::class);
         $this->call(UserSeeder::class);
     }
 }

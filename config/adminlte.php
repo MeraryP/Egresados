@@ -318,6 +318,13 @@ return [
             'icon'    => 'fa fa-key',
             'route'  => 'contrasenia.cambiar',
         ],
+        [
+            'text' => 'Crear Usuario',
+            'icon'    => 'fa fa-user',
+            'route'  => 'usuario.registrar',
+            'can' => 'create_usuario'
+        ],
+       
      
 
 

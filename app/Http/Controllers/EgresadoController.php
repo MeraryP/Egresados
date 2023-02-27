@@ -13,6 +13,7 @@ class EgresadoController extends Controller
 {
     public function index(Request $request)
     {
+        
         $texto=trim($request->get('texto'));
         $egresados =Egresado::
         where('nombre' ,'LIKE','%'.$texto.'%')

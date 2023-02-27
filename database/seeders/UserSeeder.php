@@ -17,18 +17,6 @@ class UserSeeder extends Seeder
     {
         User::create(
             [
-                'name' => 'cosme',
-                'correo' => 'cosme2@gmail.com',
-                'nacimiento' => '19990909',
-                'identidad' => '0000000000001',
-                'telefono' => '00000001',
-                'username' => 'Martha Sanchez',
-                'password' => bcrypt('cosmegc1976'),
-            ]
-        );
-
-        User::create(
-            [
                 'username' => 'admin13790tds',
                 'name' => 'cosme',
                 'correo' => 'cosme@gmail.com',
@@ -37,7 +25,19 @@ class UserSeeder extends Seeder
                 'telefono' => '00000000',
                 'password' => bcrypt('cosme13790'),
             ]
-        );
+        )->assignRole('Admin');
+
+        User::create(
+            [
+                'name' => 'cosme',
+                'correo' => 'cosme2@gmail.com',
+                'nacimiento' => '19990909',
+                'identidad' => '0000000000001',
+                'telefono' => '00000001',
+                'username' => 'Martha Sanchez',
+                'password' => bcrypt('cosmegc1976'),
+            ]
+        )->assignRole('Ordinario');
 
 
     }
