@@ -19,9 +19,6 @@ use App\Http\Controllers\Controller;
 */
 
 Route::middleware("auth")->group(function () {
-   
-    
-    
        
         Route::resource('carreras', 'App\Http\Controllers\CarreraController');
 
@@ -33,8 +30,7 @@ Route::middleware("auth")->group(function () {
         Route::put('/carreras/{id}/editar', [CarreraController::class, 'update'])
        ->name('carrera.update')->where('id','[0-9]+');
         
-    
-        //ruta  formulario
+   
         Route::get('/contrasenia',[UserController::class, 'formularioclave'])
         ->name('contrasenia.cambiar');
     
@@ -46,6 +42,14 @@ Route::middleware("auth")->group(function () {
         ->name('usuario.datos');
     
         Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+              
+        //ruta  formulario
+    Route::get('/registrar',[UserController::class, 'registrar'])
+    ->name('usuario.registrar');
+
+    //ruta guardar
+    Route::post('/registrar',[UserController::class, 'guardar'])->name('usuario.guardar');
+        //ruta  formulario
 
 
     });
