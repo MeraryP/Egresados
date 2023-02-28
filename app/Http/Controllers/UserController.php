@@ -99,7 +99,7 @@ class UserController extends Controller
             'username' => 'required|min:8|unique:users,username',
             'correo' => 'required|max:100|email|unique:users,correo',
             'nacimiento'=>'required|date|before:'.$maxima.'|after:'.$minima,
-            'identidad'=> 'required|unique:users,identidad',
+            'identidad'=> 'required|unique:users,identidad|regex:([0-9]{4}-[0-9]{4}-[0-9]{5})',
             'telefono'=> 'required|unique:users,telefono',
             'password' => 'required|min:8|confirmed',
             'rol'=> 'required|exists:roles,name',

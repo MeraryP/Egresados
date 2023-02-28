@@ -82,8 +82,8 @@
 
         {{-- identidad --}}
         <div class="input-group mb-3">
-            <input type="number" name="identidad" class="form-control @error('identidad') is-invalid @enderror" 
-            value="{{ old('identidad') }}" placeholder="Identidad" autofocus maxLength="13"
+            <input type="text"  maxlength="15" pattern="[0-9]{4}-[0-9]{4}-[0-9]{5}" title="Ingresar número de Identidad separado por guiones"  name="identidad" class="form-control @error('identidad') is-invalid @enderror" 
+            value="{{ old('identidad') }}" placeholder="Identidad" autofocus maxLength="15"
             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 
             <div class="input-group-append">

@@ -18,7 +18,7 @@ class EgresadoController extends Controller
         $egresados =Egresado::
         where('nombre' ,'LIKE','%'.$texto.'%')
         ->orwhere('identidad' ,'LIKE','%'.$texto.'%')
-        ->paginate(5);
+        ->paginate(10);
         return view ('egresado/index',compact('egresados', 'texto'));
     }
 
