@@ -102,7 +102,7 @@
         {{-- telefono --}}
         <div class="input-group mb-3">
             <input type="text" name="telefono" class="form-control @error('telefono') is-invalid @enderror" 
-            value="{{ old('telefono') }}" placeholder="telefono" autofocus maxLength="8"
+            value="{{ old('telefono') }}" placeholder="teléfono" autofocus maxLength="8"
             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 
             <div class="input-group-append">

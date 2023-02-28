@@ -35,7 +35,7 @@
         </div>
 
         <div class="input-group mb-3">
-            <label for="" style="width:20%">Telefono:</label>
+            <label for="" style="width:20%">Teléfono:</label>
             <input type="text" class="form-control" value="{{auth()->user()->telefono}}" disabled>
         </div>
 
