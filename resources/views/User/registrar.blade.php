@@ -1,12 +1,12 @@
 @extends('layouts.madre');
 
-@section('title', 'Datos de usuario')
+@section('title', 'Crear Usuario')
 
 @section('content')
 
 <form action="" method="post">
         @csrf
-        <center><h1>Crear Usuario</h1></center>
+
 
         {{-- Nombre --}}
         <div class="input-group mb-3">
@@ -186,6 +186,11 @@
             <span class="fas fa-user-plus"></span>
             Guardar datos
         </button>
+       <br>
+       <br>
+        <a type="button" class="btn btn-danger" href="/" style="width:100%"  ><i class="fa fa-times" aria-hidden="true"></i>
+           Cancelar
+        </a>
 
     </form>
 

@@ -75,8 +75,8 @@
         </button>
         <br>
         <br>
-        <a type="button" class="btn btn-danger" href="/"  style="width:100%"><i class="fa fa-reply-all" aria-hidden="true"></i>
-            Volver a inicio
+        <a type="button" class="btn btn-danger" href="/"  style="width:100%"><i class="fa fa-times" aria-hidden="true"></i>
+            Cancelar
         </a>
 
 

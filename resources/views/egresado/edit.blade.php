@@ -13,8 +13,11 @@
 
 <div class="mb-3">
     <label for="" class="form-label">Identidad</label>
-    <input type="text" name="identidad" id="identidad" class="form-control @error('identidad') is-invalid @enderror"  placeholder="0000-0000-00000" 
-    value="{{ $egresado->identidad }}">
+    <input type="text" maxlength="15" pattern="[0-9]{4}-[0-9]{4}-[0-9]{5}" 
+    title="Ingresar solo números separado por guiones"
+    name="identidad" id="identidad" class="form-control @error('identidad') is-invalid @enderror"  placeholder="0000-0000-00000" 
+    value="{{ $egresado->identidad }}"
+    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 
     @error('identidad')
                 <span class="invalid-feedback" role="alert">

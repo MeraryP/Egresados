@@ -12,7 +12,8 @@
     <input type="text"  maxlength="15" pattern="[0-9]{4}-[0-9]{4}-[0-9]{5}" 
     title="Ingresar número de Identidad separado por guiones" value="{{old('identidad')}}" 
     name="identidad" id="identidad" 
-    class="form-control @error('identidad') is-invalid @enderror" placeholder="0000-0000-00000">
+    class="form-control @error('identidad') is-invalid @enderror" placeholder="0000-0000-00000"
+    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 
     @error('identidad')
                 <span class="invalid-feedback" role="alert">
