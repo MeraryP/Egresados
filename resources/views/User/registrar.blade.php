@@ -3,35 +3,6 @@
 @section('title', 'Crear Usuario')
 
 @section('content')
-<script>
-    var msg = '{{Session::get('mensaje')}}';
-    var exist = '{{Session::has('mensaje')}}';
-    if(exist){
-        Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: msg,
-            showConfirmButton: false,
-            toast: true,
-            background: '#0be004ab',
-            timer: 3500
-        })
-    }
-
-</script>
-
-
-
-<script>
-    function quitarerror(){
-    const elements = document.getElementsByClassName('alert');
-    while (elements[0]){
-        elements[0].parentNode.removeChild(elements[0]);
-    }
-}
-
-setTimeout(quitarerror, 3000);
-</script>
 <br>
 <br>
 <form action="" method="post">
