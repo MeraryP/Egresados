@@ -1,59 +1,50 @@
-@extends('layouts.madre');
+@extends('layouts.madre')
 
 @section('title', 'Gráfico')
 
 @section('content')
+
 <!DOCTYPE html>
 <html>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <body>
-
 <div align="center">
-<canvas id="myChart" style="width:650%;max-width:900px"></canvas>
+<div id="myPlot" style="width:100%;max-width:700px"></div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </div>
-
 <script>
-var xValues = [
-     @foreach ($graficos as $g)
+ 
+var xArray = [
+  @foreach ($graficos as $g)
      {{$g->año_egresado }},
-     @endforeach];
-
-var yValues = [
-    @foreach ($graficos as $g)
+     @endforeach
+];
+var yArray = [
+  @foreach ($graficos as $g)
     {{$g->cantidad }},
-    @endforeach];
-
-
-var barColors = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145"
+    @endforeach
 ];
 
+// Define Data
+var data = [{
+  x: xArray,
+  y: yArray,
+  mode:"lines"
+}];
 
-new Chart("myChart", {
-  type: "pie",
-  data: {
-    labels: xValues,
-    datasets: [{
-      backgroundColor: barColors,
-      data: yValues
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "Egresados por año"
-    }
-  }
-});
+// Define Layout
+var layout = {
+  xaxis: {range: [2015, 2030], title: "Año"},
+  yaxis: {range: [1, 16], title: "Cantidad"},  
+  title: "Egresados por año"
+};
+
+// Display using Plotly
+Plotly.newPlot("myPlot", data, layout);
 </script>
 
 </body>
 </html>
-
 @stop
+
 
 

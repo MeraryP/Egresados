@@ -19,6 +19,7 @@ use App\Http\Controllers\Controller;
 */
 
 Route::middleware("auth")->group(function () {
+    Route::middleware("desactivado")->group(function () {
        
         Route::resource('carreras', 'App\Http\Controllers\CarreraController');
 
@@ -44,16 +45,24 @@ Route::middleware("auth")->group(function () {
         Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
               
         //ruta  formulario
-    Route::get('/registrar',[UserController::class, 'registrar'])
+     Route::get('/registrar',[UserController::class, 'registrar'])
     ->name('usuario.registrar');
 
     //ruta guardar
     Route::post('/registrar',[UserController::class, 'guardar'])->name('usuario.guardar');
         //ruta  formulario
+        Route::get('/listadousuario',[UserController::class, 'listado'])
+        ->name('usuario.listado');
+    
+        Route::get('/usuario/desactivar/{id}',[UserController::class, 'desactivar'])
+        ->name('user.desactivar');
+    
+        Route::get('/usuario/activar/{id}',[UserController::class, 'activar'])
+        ->name('user.activar');
 
 
     });
     
-
+});
 
 Auth::routes(["register" => false]);

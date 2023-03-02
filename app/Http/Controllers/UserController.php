@@ -13,8 +13,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-
-   
+    public function listado()
+    {
+        $usuarios = User::paginate(10);
+        return view ('User.listado')->with('usuarios', $usuarios);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -149,12 +152,36 @@ class UserController extends Controller
         $user->save();
 
         if($user){
-            return redirect('/')->with('mensaje', 'El usuario fue creado exitosamente.');
+            return redirect('/listadousuario')->with('mensaje', 'El usuario fue creado exitosamente.');
         }else{
             //retornar con un mensaje de error.
         }
 
     }
+    public function desactivar($id){
+        $user = User::findOrFail($id);
+        $user->estado = 1;
+        $user->save();
+
+        if($user){
+            return redirect('/listadousuario')->with('mensaje', 'El usuario fue desactivado exitosamente.');
+        }else{
+            //retornar con un mensaje de error.
+        }
+    }
+
+    public function activar($id){
+        $user = User::findOrFail($id);
+        $user->estado = 0;
+        $user->save();
+
+        if($user){
+            return redirect('/listadousuario')->with('mensaje', 'El usuario fue activado exitosamente.');
+        }else{
+            //retornar con un mensaje de error.
+        }
+    }
+
 
     
 

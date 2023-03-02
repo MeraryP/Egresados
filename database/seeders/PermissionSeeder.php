@@ -28,8 +28,11 @@ class PermissionSeeder extends Seeder
             'name' => 'index_usuario',
         ]);
        
-        //falta permission de activar y desactivar
-       
+        //activar y desactivar
+        Permission::create([
+            'titulo' => 'Desactivar y Activar Usuario',
+            'name' => 'deactivar_activar_usuario',
+        ]);
         
     }
 }
