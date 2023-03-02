@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => 'Egresados Cosme',
+    'logo' => 'Cosme García C',
     'logo_img' => 'imagen/logo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,

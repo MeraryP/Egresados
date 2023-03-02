@@ -43,12 +43,16 @@ class EgresadoController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $fecha_actual = date("d-m-Y");
+        $max = date('d-m-Y',strtotime($fecha_actual."- 15 year"));
+        $minima = date('d-m-Y',strtotime($fecha_actual."- 60 year"));
+        $maxima = date("d-m-Y",strtotime($max."+ 1 days"));
+
         $this->validate($request,[
            
             'identidad'=>'required|unique:egresados,identidad|max:15|regex:([0-9]{4}-[0-9]{4}-[0-9]{5})',
             'nombre'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)|max:100',
-            'fecha'=>'required|date',
+            'fecha'=>'required|date|before:'.$maxima.'|after:'.$minima,
             'gene_id'=>'required|exists:generos,id',
             'carre_id'=>'required|exists:carreras,id',
             'egreso'=>'required|numeric|min:2017',

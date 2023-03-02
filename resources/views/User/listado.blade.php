@@ -33,6 +33,7 @@
 setTimeout(quitarerror, 3000);
 </script>
 
+<br>
 
 <div align="right" style="float:right">
     <a href="/registrar"  class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i>Crear Usuario</a>
