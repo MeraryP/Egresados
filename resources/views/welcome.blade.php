@@ -1,4 +1,4 @@
-@extends('layouts.madre');
+@extends('layouts.madre')
 
 @section('title', 'Gráfico')
 

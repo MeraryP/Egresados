@@ -319,7 +319,7 @@ return [
             'route'  => 'contrasenia.cambiar',
         ],
         [
-            'text' => 'Crear Usuario',
+            'text' => 'Usuario',
             'icon'    => 'fa fa-user',
             'route'  => 'usuario.registrar',
             'can' => 'create_usuario'

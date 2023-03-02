@@ -1,7 +1,7 @@
-@extends('layouts.madre');
+@extends('layouts.madre')
 
 @section('title', 'Egresados')
-<link rel="icon" type="imagen/jpeg" href="./imagen/favicon.jpeg">
+<link rel="icon" type="imagen/ico" href="./imagen/favicon.ico">
 
 @section('content')
 <script>
