@@ -73,6 +73,12 @@
             <span class="fas fa-user-plus"></span>
             Guardar cambios
         </button>
+        <br>
+        <br>
+        <a type="button" class="btn btn-danger" href="/"  style="width:100%"><i class="fa fa-times" aria-hidden="true"></i>
+            Cancelar
+        </a>
+
 
 
      

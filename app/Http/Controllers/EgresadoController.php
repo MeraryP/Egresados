@@ -115,7 +115,7 @@ class EgresadoController extends Controller
 
         $request->validate([
         
-            'identidad'=>'required',
+            'identidad'=>'required|max:15|regex:([0-9]{4}-[0-9]{4}-[0-9]{5})',
             'nombre'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
             'fecha'=>'required|date',
             'gene_id'=>'required|exists:generos,id',
