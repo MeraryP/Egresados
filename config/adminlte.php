@@ -315,7 +315,7 @@ return [
 
     
         [
-            'text' => 'Crear Usuario',
+            'text' => 'Usuario',
             'icon'    => 'fa fa-user',
             'route'  => 'usuario.listado',
             'can' => 'create_usuario'

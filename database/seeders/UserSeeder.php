@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
 
         User::create(
             [
-                'name' => 'cosme',
+                'name' => 'Martha Sanchez',
                 'correo' => 'cosme2@gmail.com',
                 'nacimiento' => '19990909',
                 'identidad' => '0000000000001',
@@ -37,7 +37,7 @@ class UserSeeder extends Seeder
                 'username' => 'Martha Sanchez',
                 'password' => bcrypt('cosmegc1976'),
             ]
-        )->assignRole('Ordinario');
+        )->assignRole('Digitador');
 
 
     }

@@ -3,6 +3,7 @@
 @section('title', 'Carreras')
 
 @section('content')
+<link rel="icon" type="imagen/jpeg" href="./imagen/favicon.jpeg">
 <script>
     var msg = '{{Session::get('mensaje')}}';
     var exist = '{{Session::has('mensaje')}}';
