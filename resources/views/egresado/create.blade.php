@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form action ="/egresado"  method="POST">
+<form action ="../egresado"  method="POST">
     @csrf
 
     <div class="mb-3">
@@ -85,7 +85,7 @@
 <link rel="stylesheet" type="text/css" href="css/fonts.css" >     
 <button type="submit"class="btn btn-primary" tabindex="4"><span class="fas fa-user-plus"></span> Guardar</button> 
 
-<a href="/egresado" class="btn btn-danger" tabindex="5"><i class="fa fa-times" aria-hidden="true"></i> Cancelar</a>
+<a href="../egresado" class="btn btn-danger" tabindex="5"><i class="fa fa-times" aria-hidden="true"></i> Cancelar</a>
 
 
 </form>
