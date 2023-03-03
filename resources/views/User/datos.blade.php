@@ -8,9 +8,9 @@
 
         <br>
         <br>
-
+        
         <div class="input-group mb-3">
-            <label for="" style="width:20%">Nombre Completo:</label>
+        <label for="" style="width:20%">Nombre Completo:</label>
             <input type="text" class="form-control" value="{{auth()->user()->name}}" disabled>
         </div>
 
@@ -44,15 +44,12 @@
             <input type="password"  class="form-control" value="{{auth()->user()->password}}" disabled>
         </div>
         <br>
-        <a type="button" class="btn btn-primary"href="/contrasenia" style="width:100%"><i class="fa fa-key" aria-hidden="true"></i>
+        <a type="button" class="btn btn-primary"href="/contrasenia" ><i class="fa fa-key" aria-hidden="true"></i>
           Cambiar Contraseña
         </a>
         
-
-       <br>
-       <br>
        
-       <a type="button" class="btn btn-danger" href="/" style="width:100%"  ><i class="fa fa-reply-all" aria-hidden="true"></i>
+       <a type="button" class="btn btn-danger" href="/"   ><i class="fa fa-reply-all" aria-hidden="true"></i>
             Volver a inicio
         </a>
 

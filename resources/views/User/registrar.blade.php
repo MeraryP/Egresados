@@ -38,8 +38,8 @@ setTimeout(quitarerror, 3000);
         @csrf
 
         {{-- Nombre --}}
-        <div class="input-group mb-3">
         <label for="" class="form-label">Nombre completo</label>
+        <div class="input-group mb-3">
             <input type="text" style="width:90%" name="name" class="form-control @error('name') is-invalid @enderror"
                    value="{{ old('name') }}" placeholder="Nombre completo" autofocus maxLength="100">
 
@@ -52,8 +52,8 @@ setTimeout(quitarerror, 3000);
         </div>
 
         {{-- Username --}}
-        <div class="input-group mb-3">
         <label for="" class="form-label">Nombre de usuario</label>
+        <div class="input-group mb-3">
             <input type="text" style="width:90%" name="username" class="form-control @error('username') is-invalid @enderror"
                    value="{{ old('username') }}" placeholder="Usuario" autofocus maxLength="25">
 
@@ -67,8 +67,8 @@ setTimeout(quitarerror, 3000);
         </div>
 
         {{-- correo electronico --}}
-        <div class="input-group mb-3">
         <label for="" class="form-label">Correo electronico</label>
+        <div class="input-group mb-3">
             <input type="email" style="width:90%" name="correo" class="form-control @error('correo') is-invalid @enderror"
                    value="{{ old('correo') }}" placeholder="correo electronico" autofocus maxLength="100">
 
@@ -80,8 +80,8 @@ setTimeout(quitarerror, 3000);
         </div>
 
         {{-- identidad --}}
-        <div class="input-group mb-3">
         <label for="" class="form-label">Número de identidad</label>
+        <div class="input-group mb-3">
             <input type="text" style="width:90%" maxlength="15" pattern="[0-9]{4}-[0-9]{4}-[0-9]{5}" title="Ingresar número de Identidad separado por guiones"  name="identidad" class="form-control @error('identidad') is-invalid @enderror" 
             value="{{ old('identidad') }}" placeholder="Identidad" autofocus maxLength="100"
             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
@@ -96,8 +96,8 @@ setTimeout(quitarerror, 3000);
         </div>
 
         {{-- fecha nacimiento --}}
-        <div class="input-group mb-3">
         <label for="" class="form-label">Fecha de nacimiento</label>
+        <div class="input-group mb-3">
             <input type="text" style="width:90%" name="nacimiento" class="form-control @error('nacimiento') is-invalid @enderror" id="nacimiento"
                    value="{{ old('nacimiento') }}" placeholder="Fecha de Nacimiento" autofocus>
 
@@ -113,8 +113,8 @@ setTimeout(quitarerror, 3000);
         
 
         {{-- telefono --}}
-        <div class="input-group mb-3">
         <label for="" class="form-label">Número telefonico</label>
+        <div class="input-group mb-3">
             <input type="text" style="width:90%" name="telefono" class="form-control @error('telefono') is-invalid @enderror" 
             value="{{ old('telefono') }}" placeholder="teléfono" autofocus maxLength="8"
             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
@@ -182,18 +182,19 @@ setTimeout(quitarerror, 3000);
                 </span>
             @enderror
         </div>
+        <br>
 
         {{-- Register button --}}
-        <button type="submit"  class="btn btn-primary" style="width:100%">
+        <button type="submit"  class="btn btn-primary" >
             <span class="fas fa-user-plus"></span>
             Guardar datos
         </button>
-       <br>
-       <br>
-        <a type="button" class="btn btn-danger" href="/" style="width:100%"  ><i class="fa fa-times" aria-hidden="true"></i>
+      
+        <a type="button" class="btn btn-danger" href="/"  ><i class="fa fa-times" aria-hidden="true"></i>
            Cancelar
         </a>
-
+<br>
+<br>
     </form>
 
     <script>

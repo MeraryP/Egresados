@@ -40,7 +40,7 @@
 
       <div class="mb-3">
         <label for="" class="form-label">Fecha de Nacimiento</label>
-        <input type="text" name="fecha"  id="fecha"  class="form-control @error('fecha') is-invalid @enderror" placeholder="0000-00-00" value="{{ $egresado->fecha_nacimiento }}"
+        <input type="date" name="fecha"  id="fecha"  class="form-control @error('fecha') is-invalid @enderror" placeholder="0000-00-00" value="{{ $egresado->fecha_nacimiento }}"
         title="Ingrese la fecha de nacimiento ">
         @error('fecha')
                 <span class="invalid-feedback" role="alert">

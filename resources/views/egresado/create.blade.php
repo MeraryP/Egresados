@@ -40,7 +40,7 @@
 
       <div class="mb-3">
         <label for="" class="form-label">Fecha de Nacimiento</label>
-        <input type="text" value="{{old('fecha')}}" name="fecha"  id="fecha"  
+        <input type="date" value="{{old('fecha')}}" name="fecha"  id="fecha"  
         class="form-control @error('fecha') is-invalid @enderror" placeholder="Fecha de nacimiento" 
         title="Ingrese la fecha de nacimiento " autofocus>
 

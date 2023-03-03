@@ -98,7 +98,7 @@ class UserController extends Controller
         $maxima = date("d-m-Y",strtotime($max."+ 1 days"));
 
         $rules=[
-            'name' => 'required',
+            'name' =>'required|regex:/^([A-Za-zÁÉÍÓÚáéíóúñÑ]+)(\s[A-Za-zÁÉÍÓÚáéíóúñÑ]+)*$/|max:100',
             'username' => 'required|min:8|unique:users,username',
             'correo' => 'required|max:100|email|unique:users,correo',
             'nacimiento'=>'required|date|before:'.$maxima.'|after:'.$minima,

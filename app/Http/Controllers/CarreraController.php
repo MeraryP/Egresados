@@ -40,7 +40,7 @@ class CarreraController extends Controller
         
         $request->validate([
         
-            'carrera'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+            'carrera'=>'required|regex:/^([A-Za-zÁÉÍÓÚáéíóúñÑ]+)(\s[A-Za-zÁÉÍÓÚáéíóúñÑ]+)*$/|max:100',
             
         ]);
 
@@ -94,7 +94,7 @@ class CarreraController extends Controller
         
         $request->validate([
         
-            'carrera'=>'required|regex:([a-zA-ZñÑáéíóúÁÉÍÓÚ\s]+)',
+            'carrera'=>'required|regex:/^([A-Za-zÁÉÍÓÚáéíóúñÑ]+)(\s[A-Za-zÁÉÍÓÚáéíóúñÑ]+)*$/|max:100',
             
         ]);
 

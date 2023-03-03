@@ -7,8 +7,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-<div align="center">
-<div id="myPlot" style="width:100%;max-width:700px"></div>
+
+<div align="left" id="myPlot" style="width:50%;max-width:700px"></div>
+
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </div>
 <script>
@@ -40,7 +41,10 @@ var layout = {
 
 // Display using Plotly
 Plotly.newPlot("myPlot", data, layout);
+
 </script>
+
+
 
 </body>
 </html>
