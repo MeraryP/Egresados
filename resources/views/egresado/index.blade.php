@@ -47,7 +47,7 @@ setTimeout(quitarerror, 3000);
     </div>
     <div class="col-sm-2 " style="float:left">
     <button type="submit" class="btn btn-primary" value="Buscar" style="width:45%;height:37px" ><i class="fa fa-search" aria-hidden="true"></i></button>
-    <a type="button" href="/egresado" class="btn btn-danger"  style="width:45%;height:37px"><i class="fa fa-magic" aria-hidden="true"></i></a>
+    <a type="button" href="./egresado" class="btn btn-danger"  style="width:45%;height:37px"><i class="fa fa-magic" aria-hidden="true"></i></a>
     </div>
     <div align="right" style="float:right">
     <a href="egresado/create"  class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a>
@@ -90,7 +90,7 @@ setTimeout(quitarerror, 3000);
            
 
             <td>
-            <a type="button" href="/egresado/{{$egresado->id}}/edit" class="btn btn-info">
+            <a type="button" href="./egresado/{{$egresado->id}}/edit" class="btn btn-info">
                 <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                 <button type="bottom" onClick="borrar{{$egresado->id}}()" class="btn btn-danger">
                <i class="fa fa-window-close" aria-hidden="true"></i></button>

@@ -60,7 +60,7 @@ setTimeout(quitarerror, 3000);
 
             <td>
                 <form action="{{route ('carreras.destroy',$carrera->id )}}" method="POST"> 
-                <a type="button" href="/carreras/{{$carrera->id}}/edit" class="btn btn-info">
+                <a type="button" href="./carreras/{{$carrera->id}}/edit" class="btn btn-info">
                 <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                 @csrf
               
