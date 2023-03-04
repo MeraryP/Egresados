@@ -49,7 +49,7 @@
         </a>
         
        
-       <a type="button" class="btn btn-danger" href="/"   ><i class="fa fa-reply-all" aria-hidden="true"></i>
+       <a type="button" class="btn btn-danger" href="../"   ><i class="fa fa-reply-all" aria-hidden="true"></i>
             Volver a inicio
         </a>
 
