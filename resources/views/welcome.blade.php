@@ -10,7 +10,7 @@
 
 <div align="left" id="myPlot" style="width:50%;max-width:700px"></div>
 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="./cdn.plot.ly/plotly-latest.min.js"></script>
 </div>
 <script>
  
