@@ -31,7 +31,15 @@ class HomeController extends Controller
     {
         
         $graficos = Egresado::select('año_egresado', DB::raw('count(*)as cantidad'))->groupby ('año_egresado')->orderby('año_egresado')->get();
-        return view('welcome')->with('graficos', $graficos);
+       
+
+        $graficarrera = Carrera::select('carrera', DB::raw('count(*)as cantidad'))
+        ->join ('egresados', 'carreras.id', '=', 'egresados.carre_id')
+        ->groupby ('carrera')->orderby('carrera')->get();
+        $totalegresado = Egresado::all()->count();
+        return view('welcome')->with('graficos', $graficos)->with('graficarrera', $graficarrera)->with('totalegresado', $totalegresado);
+        
+
 
     }
 }

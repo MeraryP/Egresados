@@ -161,7 +161,7 @@
             Guardar datos
         </button>
       
-        <a type="button" class="btn btn-danger" href="/"  ><i class="fa fa-times" aria-hidden="true"></i>
+        <a type="button" class="btn btn-danger" href="/listadousuario"  ><i class="fa fa-times" aria-hidden="true"></i>
            Cancelar
         </a>
 <br>

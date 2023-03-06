@@ -27,7 +27,7 @@
 </div>
        <div class="mb-3">
         <label for="" class="form-label">Nombre Completo</label>
-        <input type="text"  name="nombre"  id="nombre"  class="form-control @error('nombre') is-invalid @enderror"   placeholder="Nombre Completo del Estudiante" value="{{ $egresado->nombre }}"
+        <input type="text" name="nombre"  id="nombre"  class="form-control @error('nombre') is-invalid @enderror"   placeholder="Nombre Completo del Estudiante" value="{{ $egresado->nombre }}"
         title="Ingrese el nombre completo del egresado">
         @error('nombre')
                 <span class="invalid-feedback" role="alert">
@@ -73,7 +73,7 @@
 
       <div class="mb-3">
         <label for="">Año de Egreso</label>
-        <input type="number"  class="form-control @error('egreso') is-invalid @enderror"  name="egreso"  id="egreso" placeholder="####" value="{{ $egresado->año_egresado }}"
+        <input type="number" class="form-control @error('egreso') is-invalid @enderror"  name="egreso"  id="egreso" placeholder="####" value="{{ $egresado->año_egresado }}"
         title="Ingrese el año de egreso">
         @error('egreso')
                 <span class="invalid-feedback" role="alert">
@@ -83,7 +83,7 @@
       </div>
 
 <button type="submit" class="btn btn-primary" tabindex="4"><span class="fas fa-user-plus"></span> Guardar cambios</button>     
-<a href="./egresado" class="btn btn-danger" tabindex="5"> <i class="fa fa-times" aria-hidden="true"></i> Cancelar</a>
+<a href="/egresado" class="btn btn-danger" tabindex="5"> <i class="fa fa-times" aria-hidden="true"></i> Cancelar</a>
 
 
 
