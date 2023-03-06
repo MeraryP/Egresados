@@ -52,8 +52,8 @@ var data = [{
 
 // Define Layout
 var layout = {
-  xaxis: {range: [1976, ( {{$g->año_egresado}} +1 )], title: "Año"},
-  yaxis: {range: [1, ( {{$g->cantidad }} +2)], title: "Cantidad"},  
+  xaxis: {range: [1976, (@if(isset($g->año_egresado)) {{$g->año_egresado}}+1 @else 2022 @endif)], title: "Año"},
+  yaxis: {range: [1, (@if(isset($g->cantidad)) {{$g->cantidad}}+1 @else 10 @endif)], title: "Cantidad"},  
   title: "Egresados por año"
 };
 

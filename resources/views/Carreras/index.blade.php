@@ -1,11 +1,9 @@
 @extends('layouts.madre')
 
 @section('title', 'Carreras')
-<link rel="icon" type="imagen/ico" href="./imagen/favicon.ico">
-
 
 @section('content')
-<link rel="icon" type="imagen/jpeg" href="./imagen/favicon.jpeg">
+
 <script>
     var msg = '{{Session::get('mensaje')}}';
     var exist = '{{Session::has('mensaje')}}';
