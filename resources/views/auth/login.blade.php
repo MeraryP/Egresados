@@ -1,84 +1,56 @@
-@extends('adminlte::auth.auth-page', ['auth_type' => 'login'])
-
-@section('adminlte_css_pre')
-    <link rel="stylesheet" href="{{ asset('vendor/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-@stop
-
-@php( $login_url = View::getSection('login_url') ?? config('adminlte.login_url', 'login') )
-@php( $register_url = View::getSection('register_url') ?? config('adminlte.register_url', 'register') )
-@php( $password_reset_url = View::getSection('password_reset_url') ?? config('adminlte.password_reset_url', 'password/reset') )
-
-@if (config('adminlte.use_route_url', false))
-    @php( $login_url = $login_url ? route($login_url) : '' )
-    @php( $register_url = $register_url ? route($register_url) : '' )
-    @php( $password_reset_url = $password_reset_url ? route($password_reset_url) : '' )
-@else
-    @php( $login_url = $login_url ? url($login_url) : '' )
-    @php( $register_url = $register_url ? url($register_url) : '' )
-    @php( $password_reset_url = $password_reset_url ? url($password_reset_url) : '' )
+@if(session('mensaje'))
+<div class="alert alert-danger">
+    {{session('mensaje')}}
+</div>
 @endif
+<form action="{{route('login')}}" method="post">
+@csrf
 
-@section('auth_header', __('Ingrese sus datos para iniciar tu sesión'))
+{{-- Email field --}}
+<div class="input-group mb-3">
+    <input type="text" name="username" class="form-control @error('username') is-invalid @enderror"
+           value="{{ old('username') }}" placeholder="Usuario" autofocus>
 
-@section('auth_body')
-    @if(session('mensaje'))
-        <div class="alert alert-danger">
-            {{session('mensaje')}}
+    <div class="input-group-append">
+        <div class="input-group-text">
+            <span class="fas fa-user"></span>
         </div>
-    @endif
-    <form action="{{ $login_url }}" method="post">
-        @csrf
+    </div>
 
-        {{-- Email field --}}
-        <div class="input-group mb-3">
-            <input type="text" name="username" class="form-control @error('username') is-invalid @enderror"
-                   value="{{ old('username') }}" placeholder="Usuario" autofocus>
+    @error('username')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+</div>
 
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-user"></span>
-                </div>
-            </div>
+{{-- Password field --}}
+<div class="input-group mb-3">
+    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+           placeholder="Contraseña">
 
-            @error('username')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
+    <div class="input-group-append">
+        <div class="input-group-text">
+            <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
         </div>
+    </div>
 
-        {{-- Password field --}}
-        <div class="input-group mb-3">
-            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-                   placeholder="Contraseña">
+    @error('password')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+</div>
 
-            <div class="input-group-append">
-                <div class="input-group-text">
-                    <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
-                </div>
-            </div>
+{{-- Login field --}}
+<div class="row">
 
-            @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
+    <div class="col-12">
+        <button type=submit class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
+            <span class="fas fa-sign-in-alt"></span>
+            Inicio de Sesion
+        </button>
+    </div>
+</div>
 
-        {{-- Login field --}}
-        <div class="row">
-
-            <div class="col-12">
-                <button type=submit class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
-                    <span class="fas fa-sign-in-alt"></span>
-                    Inicio de Sesion
-                </button>
-            </div>
-        </div>
-
-    </form>
-@stop
-
-@section('auth_footer')
-
-@stop
+</form>

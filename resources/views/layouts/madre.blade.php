@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+
 
 
 <style>
@@ -20,7 +20,7 @@
 
 
 </style>
-
+@yield('content')
 
 <div syle="display:none">
 <script src="{{ asset("JS/sweetalert2.all.min.js") }}"></script>
