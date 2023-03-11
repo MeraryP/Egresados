@@ -1,28 +1,39 @@
-@extends('layouts.madre')
-
-@section('title', 'Gráfico')
+@extends('layouts.app')
 
 @section('content')
 
 <!DOCTYPE html>
 <html>
 <body>
-
-<div style= "width:23%; margin-right:1.5%; margin-top:4%">
-<a href= "{{route('egresado.index')}}"> 
-<div class="small-box bg-info">
-<div class="inner">
-<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{$totalegresado}}</font></font></h3>
-<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Egresados</font></font></p>
-</div>
-<div class="icon">
-<i class="fa fa-graduation-cap"></i>
-</div>
-</div>
-</a>
-</div>
+    <script src="{{ asset("JS/sweetalert2.all.min.js") }}"></script>
+    <script src="{{ asset("JS/app.js") }}"></script>
+    <script src="{{asset('JS/plotly-latest.min.js')}}"></script>
+    <script src="{{asset('JS/chart.js')}}"></script>
 
 
+    <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+      <a href= "{{route('egresado.index')}}" style="text-decoration: none"> 
+        <div class="card bg-gradient-info">
+            <div class="card-body p-3">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="numbers">
+                            <h2 class="text-uppercase font-weight-bold text-default">
+                              Egresados
+                            </h2>
+                            <h5 class="font-weight-bolder">
+                              {{$totalegresado}} registrados
+                            </h5>
+                        </div>
+                    </div>
+                      <i class="fa fa-graduation-cap fa-4x" style="color:mediumslateblue"></i>
+                </div>
+            </div>
+        </div>
+      </a>
+    </div>
+
+    <br><br>
 
 <div align ="center" id="myPlot" style="float:left; width:45%;max-width:700px"></div>
 <div align ="center" style="float:right; width:45%;max-width:700px">

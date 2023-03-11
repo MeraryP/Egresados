@@ -1,4 +1,4 @@
-@extends('layouts.madre')
+@extends('layouts.app')
 
 @section('title', 'Listado de usuario')
 

@@ -25,11 +25,10 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\View\View
      */
     public function index()
     {
-        
         $graficos = Egresado::select('año_egresado', DB::raw('count(*)as cantidad'))->groupby ('año_egresado')->orderby('año_egresado')->get();
        
 
@@ -39,7 +38,6 @@ class HomeController extends Controller
         $totalegresado = Egresado::all()->count();
         return view('welcome')->with('graficos', $graficos)->with('graficarrera', $graficarrera)->with('totalegresado', $totalegresado);
         
-
 
     }
 }

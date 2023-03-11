@@ -1,56 +1,53 @@
-@if(session('mensaje'))
-<div class="alert alert-danger">
-    {{session('mensaje')}}
-</div>
-@endif
-<form action="{{route('login')}}" method="post">
-@csrf
+@extends('layouts.app', ['class' => 'bg-default'])
 
-{{-- Email field --}}
-<div class="input-group mb-3">
-    <input type="text" name="username" class="form-control @error('username') is-invalid @enderror"
-           value="{{ old('username') }}" placeholder="Usuario" autofocus>
+@section('content')
+    @include('layouts.headers.guest')
 
-    <div class="input-group-append">
-        <div class="input-group-text">
-            <span class="fas fa-user"></span>
+    <div class="container mt--9 pb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-7">
+                <div class="card bg-secondary shadow border-0">
+                    <div class="card-body px-lg-5 py-lg-5">
+                        <div class="text-center text-muted mb-4">
+                            <h2>Iniciar Sesion</h2>
+                        </div>
+                        <form role="form" method="POST" action="{{ route('login') }}">
+                            @csrf
+
+                            <div class="form-group{{ $errors->has('username') ? ' has-danger' : '' }} mb-3">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                                    </div>
+                                    <input class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="{{ __('Usuario') }}" 
+                                    type="text" name="username" value="{{ old('username') }}" value="Usuario" required autofocus>
+                                </div>
+                                @if ($errors->has('username'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
+                                <div class="input-group input-group-alternative">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                                    </div>
+                                    <input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="{{ __('Password') }}" type="password" value="secret" required>
+                                </div>
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary my-4">{{ __('Sign in') }}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-    @error('username')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
-</div>
-
-{{-- Password field --}}
-<div class="input-group mb-3">
-    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-           placeholder="Contraseña">
-
-    <div class="input-group-append">
-        <div class="input-group-text">
-            <span class="fas fa-lock {{ config('adminlte.classes_auth_icon', '') }}"></span>
-        </div>
-    </div>
-
-    @error('password')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
-</div>
-
-{{-- Login field --}}
-<div class="row">
-
-    <div class="col-12">
-        <button type=submit class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
-            <span class="fas fa-sign-in-alt"></span>
-            Inicio de Sesion
-        </button>
-    </div>
-</div>
-
-</form>
+@endsection
