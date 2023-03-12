@@ -14,7 +14,7 @@
     <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
       <a href= "{{route('egresado.index')}}" style="text-decoration: none"> 
         <div class="card bg-gradient-info">
-            <div class="card-body p-3">
+            <div class="card-body p-2">
                 <div class="row">
                     <div class="col-8">
                         <div class="numbers">
@@ -71,7 +71,7 @@ var layout = {
 
 
 // Display using Plotly
-Plotly.newPlot("myPlot", data, layout);
+Plotly.newPlot("myPlot", data, layout,{staticPlot: true});
 
 </script>
 
