@@ -71,7 +71,7 @@ var layout = {
 
 
 // Display using Plotly
-Plotly.newPlot("myPlot", data, layout,);
+Plotly.newPlot("myPlot", data, layout);
 
 </script>
 

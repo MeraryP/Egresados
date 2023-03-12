@@ -3,6 +3,15 @@
 @section('title', 'Datos de usuario')
 
 @section('content')
+<style>
+    .form-control{
+        border-top-left-radius: 5px !important;
+        border-bottom-left-radius: 5px !important;
+        border-top-right-radius: 5px !important;
+        border-bottom-right-radius: 5px !important;
+        padding-left: 5px !important;
+    }
+</style>
 
         <center><h1></h1></center>
 
