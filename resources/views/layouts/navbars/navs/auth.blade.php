@@ -45,4 +45,3 @@ id="navbar-main">
     </div>
 </nav>
 <br><br><br><br>
-<center><h1>@yield('title')</h1></center>

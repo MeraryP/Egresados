@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Gráfico')
 @section('content')
 
 <!DOCTYPE html>
@@ -37,6 +37,7 @@
 
 <div align ="center" id="myPlot" style="float:left; width:45%;max-width:700px"></div>
 <div align ="center" style="float:right; width:45%;max-width:700px">
+
 <canvas id="myChart" style="width:500%;max-width:800px; height:400px"></canvas>
 </div>
 

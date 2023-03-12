@@ -39,10 +39,7 @@
             <input type="text" class="form-control" value="{{auth()->user()->telefono}}" disabled>
         </div>
 
-        <div class="input-group mb-3">
-        <label for="" style="width:20%">Contraseña:</label>
-            <input type="password"  class="form-control" value="{{auth()->user()->password}}" disabled>
-        </div>
+      
         <br>
         <a type="button" class="btn btn-primary"href="/contrasenia" ><i class="fa fa-key" aria-hidden="true"></i>
           Cambiar Contraseña

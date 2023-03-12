@@ -33,7 +33,7 @@ setTimeout(quitarerror, 3000);
 </script>
 <br>
 <div align="right">
- <a href="carreras/create" class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a>
+ <a href="carreras/create" title="Crear registro" class="btn btn-primary"><i class="fa fa-file" aria-hidden="true"></i> Crear</a>
 </div>
 <br>
 
@@ -58,7 +58,7 @@ setTimeout(quitarerror, 3000);
 
             <td>
                 <form action="{{route ('carreras.destroy',$carrera->id )}}" method="POST"> 
-                <a type="button" href="./carreras/{{$carrera->id}}/edit" class="btn btn-info">
+                <a type="button" href="./carreras/{{$carrera->id}}/edit" class="btn btn-info" title="Editar Carrera">
                 <i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
                 @csrf
               

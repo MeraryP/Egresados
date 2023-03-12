@@ -14,7 +14,7 @@
     <br>
     <div class="input-group mb-3">
             <input type="password" name="viejapassword" class="form-control @error('viejapassword') is-invalid @enderror"
-                   placeholder="contraseña actual">
+                   placeholder="Contraseña actual">
 
             <div class="input-group-append">
                 <div class="input-group-text">
@@ -53,7 +53,7 @@
         <div class="input-group mb-3">
             <input type="password" name="password_confirmation"
                    class="form-control @error('password_confirmation') is-invalid @enderror"
-                   placeholder="{{ __('adminlte::adminlte.retype_password') }}">
+                   placeholder="{{ __('Confirmar contraseña actual') }}">
 
             <div class="input-group-append">
                 <div class="input-group-text">

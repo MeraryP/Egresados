@@ -72,11 +72,11 @@ setTimeout(quitarerror, 3000);
 
             <td>
                 @if($users->estado == 0)
-                    <a type="button" href="{{route('user.desactivar',['id'=>$users->id])}}" class="btn btn-danger">
+                    <a type="button" title="Desactivar Usuario" href="{{route('user.desactivar',['id'=>$users->id])}}" class="btn btn-danger">
                     <i class="fa fa-eye-slash" aria-hidden="true"></i>
                     </a>
                 @else
-                    <a type="button" href="{{route('user.activar',['id'=>$users->id])}}" class="btn btn-success">
+                    <a type="button" title="Activar Usuario" href="{{route('user.activar',['id'=>$users->id])}}" class="btn btn-success">
                     <i class="fa fa-eye" aria-hidden="true"></i>
                     </a>
                 @endif
