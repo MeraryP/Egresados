@@ -71,14 +71,9 @@ var layout = {
 
 
 // Display using Plotly
-Plotly.newPlot("myPlot", data, layout,{staticPlot: true});
+Plotly.newPlot("myPlot", data, layout,);
 
 </script>
-
-
-
-
-
 
 
 <script>
