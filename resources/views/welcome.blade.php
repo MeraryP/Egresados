@@ -26,7 +26,7 @@
                             </h5>
                         </div>
                     </div>
-                      <i class="fa fa-graduation-cap fa-4x" style="color:mediumslateblue"></i>
+                      <i class="fa fa-graduation-cap fa-3x" style="color:black"></i>
                 </div>
             </div>
         </div>

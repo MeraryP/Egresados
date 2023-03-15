@@ -41,7 +41,7 @@
         <label for="" class="form-label">Correo electronico</label>
         <div class="input-group mb-3">
             <input type="email" style="width:90%" name="correo" class="form-control @error('correo') is-invalid @enderror"
-                   value="{{ old('correo') }}" placeholder="correo electronico" autofocus maxLength="100">
+                   value="{{ old('correo') }}" placeholder="Correo electronico" autofocus maxLength="100">
 
             @error('correo')
                 <span class="invalid-feedback" role="alert">
@@ -87,7 +87,7 @@
         <label for="" class="form-label">Número telefonico</label>
         <div class="input-group mb-3">
             <input type="text" style="width:90%" name="telefono" class="form-control @error('telefono') is-invalid @enderror" 
-            value="{{ old('telefono') }}" placeholder="teléfono" autofocus maxLength="8"
+            value="{{ old('telefono') }}" placeholder="Teléfono" autofocus maxLength="8"
             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 
             
@@ -143,7 +143,7 @@
         <div class="input-group mb-3">
             <input type="password" name="password_confirmation"
                    class="form-control @error('password_confirmation') is-invalid @enderror"
-                   placeholder="{{ __('adminlte::adminlte.retype_password') }}">
+                   placeholder="Confirmar contraseña">
 
             
 
